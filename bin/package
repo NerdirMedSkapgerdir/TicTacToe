@@ -1,0 +1,4 @@
+#!/bin/bash
+
+./bin/compile_and_test
+./gradlew installApp
