@@ -26,7 +26,7 @@ public class TicTacToe {
 	}
 
 	public static String getPlayer() {
-		return "";
+		return "Leikmaður 1";
 	}
 
 	public static String printResults() {

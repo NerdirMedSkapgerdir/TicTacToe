@@ -21,4 +21,9 @@ public class TestInterface {
 	public void testUpdateBoard() {
 		assertEquals(true, new TicTacToe().updateBoard("1"));
 	}
+
+	@Test
+	public void testGetPlayer() {
+		assertEquals("Leikmaður 1", new TicTacToe().getPlayer());
+	}
 }
