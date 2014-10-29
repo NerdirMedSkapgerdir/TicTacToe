@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mylla</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="container">
+            <h1>#Mylla#</h1>
+            <form method="post" action="/start" class="form-inline" role="form">
+                <div class="form group">
+                    <input type="text" name="number" id="number" placeholder="1">
+                </div>
+                <button type="submit">Byrja</button>
+            </form>
+            <hr>
+            <div id="results"></div>
+            <hr>
+        </div>
+
+        <!-- Load jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+        <!-- Use ajax to submit form, retrive joke and display on page -->
+        <script>
+        $(document).ready(function() {
+            var form = $('form');
+            form.submit(function( event ) {
+                $.ajax({
+                    type: form.attr('method'),
+                    url: form.attr('action'),
+                    data: null
+                }).done(function(joke) {
+                    $('#results').html(joke).attr('class', 'alert alert-success');
+                }).fail(function() {
+                    $('#results').html('Error, no joke found...').attr('class', 'alert alert-danger');
+                });
+                event.preventDefault();
+            });
+        });
+        </script>
+    </body>
+</html>
