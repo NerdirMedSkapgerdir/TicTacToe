@@ -14,7 +14,8 @@ public class TTTInterface {
 			System.out.println(mylla.getPlayer() + " á leik.");
 			Scanner scan = new Scanner(System.in);
 			while(!mylla.updateBoard(scan.nextLine())) {
-				System.out.println("Ógilt intak, renydu aftur.");
+				System.out.println("Ógilt inntak eða reitur nú þegar fylltur, reyndu aftur.");
+				System.out.println(mylla.getPlayer() + " á leik.");
 			} 
 		} 
 		return mylla.printResults();
