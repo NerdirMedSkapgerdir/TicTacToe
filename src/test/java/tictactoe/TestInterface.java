@@ -9,7 +9,7 @@ public class TestInterface {
     }
 	@Test
 	public void testEmptyBoard() {
-		assertEquals("||===========||\n||   |   |   ||\n||===========||\n||   |   |   ||\n||===========||\n||   |   |   ||\n||===========||",TTTInterface.drawBoard());
+		assertEquals("||===========||\n||   |   |   ||\n||===========||\n||   |   |   ||\n||===========||\n||   |   |   ||\n||===========||", new TicTacToe().drawBoard());
 	}
 
 	@Test
@@ -18,25 +18,7 @@ public class TestInterface {
 	}
 
 	@Test
-	public void testChoicesStart() {
-		assertEquals("||===========||\n||   |   |   ||\n||===========||\n||   |   |   ||\n||===========||\n||   |   |   ||\n||===========||", TTTInterface.choices("s"));
-	}
-	@Test
-	public void testChoicesWrongInput() {
-		assertEquals("Ekki réttur innsláttur. Reyndu aftur.\nVeldu 's' til að byrja\n      'd' fyrir leiðbeiningar.\n      'e' til að hætta.", TTTInterface.choices("m"));
-	}
-	@Test
-	public void testChoicesDirections() {
-		assertEquals("", TTTInterface.choices("d"));
-	}
-	
-	@Test
-	public void testChoicesExit() {
-		assertEquals("Bless.", TTTInterface.choices("e"));
-	}
-	
-	@Test
-	public void testChangeBoard() {
-		assertEquals("||===========||\n|| X |   |   ||\n||===========||\n||   |   |   ||\n||===========||\n||   |   |   ||\n||===========||", TTTInterface.changeBoard(1, true));
+	public void testUpdateBoard() {
+		assertEquals(true, new TicTacToe().updateBoard("1"));
 	}
 }
