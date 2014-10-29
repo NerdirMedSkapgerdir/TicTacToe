@@ -11,4 +11,9 @@ public class TestInterface {
 	public void testEmptyBoard() {
 		assertEquals("||===========||\n||   |   |   ||\n||===========||\n||   |   |   ||\n||===========||\n||   |   |   ||\n||===========||",TTTInterface.drawBoard());
 	}
+
+	@Test
+	public void testWelcomeMessage() {
+		assertEquals("Velkomin í myllu!", TTTInterface.welcome());
+	}
 }
