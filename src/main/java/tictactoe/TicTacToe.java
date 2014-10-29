@@ -4,6 +4,7 @@ public class TicTacToe {
 	static char[] states = new char[9];
 	static boolean player;
 	static String board;
+	static boolean isTie;
 
 	public TicTacToe() {
 		for(int i = 0; i < 9; i++) {
@@ -11,6 +12,7 @@ public class TicTacToe {
 		}
 		player = true;
 		board = "||===========||\n||   |   |   ||\n||===========||\n||   |   |   ||\n||===========||\n||   |   |   ||\n||===========||";
+		isTie = false;
 	}
 
 	public static String drawBoard() {
@@ -118,7 +120,12 @@ public class TicTacToe {
 			}
 			curr = 'O';
 		}
-		return false;
+		for(char state : states) {
+			if(state == 'E')
+				return false;
+		}
+		isTie = true;
+		return isTie;
 	}
 
 	public static String getPlayer() {
@@ -127,6 +134,11 @@ public class TicTacToe {
 	}
 
 	public static String printResults() {
-		return "";
+		if(isTie) {
+			return board + "\nJafntefli!";
+		}
+		if(player) player = false;
+		else player = true;
+		return board + "\n" + getPlayer() + " hefur unnið!";
 	}
 }

@@ -86,4 +86,45 @@ public class TestInterface {
 		mylla.updateBoard("3");
 		assertEquals(false, mylla.isFinished());	
 	}
+
+	@Test
+	public void testPrintResultsWinning() {
+		TicTacToe mylla = new TicTacToe();
+		mylla.updateBoard("1");
+		mylla.updateBoard("2");
+		mylla.updateBoard("5");
+		mylla.updateBoard("3");
+		mylla.updateBoard("9");
+		assertEquals(true, mylla.isFinished());
+		assertEquals("||===========||\n|| X | O | O ||\n||===========||\n||   | X |   ||\n||===========||\n||   |   | X ||\n||===========||\nLeikmaður 1 hefur unnið!", mylla.printResults());
+	}
+
+	@Test
+	public void testPrintResultsWinning2() {
+		TicTacToe mylla = new TicTacToe();
+		mylla.updateBoard("2");
+		mylla.updateBoard("1");
+		mylla.updateBoard("3");
+		mylla.updateBoard("4");
+		mylla.updateBoard("8");
+		mylla.updateBoard("7");
+		assertEquals(true, mylla.isFinished());
+		assertEquals("||===========||\n|| O | X | X ||\n||===========||\n|| O |   |   ||\n||===========||\n|| O | X |   ||\n||===========||\nLeikmaður 2 hefur unnið!", mylla.printResults());
+	}
+
+	@Test
+	public void testPrintResultsThai() {
+		TicTacToe mylla = new TicTacToe();
+		mylla.updateBoard("1");
+		mylla.updateBoard("2");
+		mylla.updateBoard("3");
+		mylla.updateBoard("6");
+		mylla.updateBoard("4");
+		mylla.updateBoard("7");
+		mylla.updateBoard("5");
+		mylla.updateBoard("9");
+		mylla.updateBoard("8");
+		assertEquals(true, mylla.isFinished());
+		assertEquals("||===========||\n|| X | O | X ||\n||===========||\n|| X | X | O ||\n||===========||\n|| O | X | O ||\n||===========||\nJafntefli!", mylla.printResults());
+	}
 }

@@ -15,8 +15,8 @@ public class TTTInterface {
 			Scanner scan = new Scanner(System.in);
 			while(!mylla.updateBoard(scan.nextLine())) {
 				System.out.println("Ógilt intak, renydu aftur.");
-			}
-		}
+			} 
+		} 
 		return mylla.printResults();
 	}
 
@@ -31,6 +31,7 @@ public class TTTInterface {
 
 			if (input.equals("s")) {
 				System.out.println(run());
+				System.out.println("Veldu 's' til að spila aftur.");
 			} else if (input.equals("d")){
 				// Print directions
 				System.out.println("*leidbeiningar*");
