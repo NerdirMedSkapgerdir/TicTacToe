@@ -10,7 +10,7 @@ public class TTTInterface {
 	public static String run() {
 		TicTacToe mylla = new TicTacToe();
 		while(!mylla.isFinished()) {
-			mylla.drawBoard();
+			System.out.println(mylla.drawBoard());
 			System.out.println(mylla.getPlayer() + " á leik.");
 			Scanner scan = new Scanner(System.in);
 			while(!mylla.updateBoard(scan.nextLine())) {
@@ -22,8 +22,6 @@ public class TTTInterface {
 
 	public static void main(String args[]) {
 		System.out.println(welcome());
-		System.out.println(run());
-
 		String input;
 		do {
 			Scanner scan = new Scanner(System.in);
