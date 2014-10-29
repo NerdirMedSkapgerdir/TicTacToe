@@ -25,6 +25,23 @@ public class TestInterface {
 	}
 
 	@Test
+	public void testUpdateBoard2() {
+		TicTacToe mylla = new TicTacToe();
+		mylla.updateBoard("1");
+		mylla.updateBoard("5");
+		assertEquals("||===========||\n|| X |   |   ||\n||===========||\n||   | O |   ||\n||===========||\n||   |   |   ||\n||===========||", mylla.drawBoard());
+	}
+
+	@Test
+	public void testUpdateBoard3() {
+		TicTacToe mylla = new TicTacToe();
+		mylla.updateBoard("1");
+		mylla.updateBoard("5");
+		mylla.updateBoard("9");
+		assertEquals("||===========||\n|| X |   |   ||\n||===========||\n||   | O |   ||\n||===========||\n||   |   | X ||\n||===========||", mylla.drawBoard());
+	}
+
+	@Test
 	public void testGetPlayer() {
 		assertEquals("Leikmaður 1", new TicTacToe().getPlayer());
 	}

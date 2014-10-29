@@ -20,16 +20,16 @@ public class TicTacToe {
 	public static boolean updateBoard(String input) {
 		int inp = Integer.parseInt(input);
 		if(inp < 1 || inp > 9) return false;
-		if(states[inp] != 'E') return false;
+		if(states[inp - 1] != 'E') return false;
 		char cPlayer;
 		if(player == true) {
 			cPlayer = 'X';
-			states[inp] = cPlayer;
+			states[inp - 1] = cPlayer;
 			player = false;
 		}
 		else {
 			cPlayer = 'O';
-			states[inp] = cPlayer;
+			states[inp - 1] = cPlayer;
 			player = true;
 		}
 		StringBuilder newBoard = new StringBuilder(board);
@@ -37,28 +37,28 @@ public class TicTacToe {
 			case 1: newBoard.setCharAt(19, cPlayer);
 					break;
 
-			case 2: //DERK
+			case 2: newBoard.setCharAt(23, cPlayer);
 					break;
 
-			case 3: //DERK
+			case 3: newBoard.setCharAt(27, cPlayer);
 					break;
 
-			case 4: //DERK
+			case 4: newBoard.setCharAt(51, cPlayer);
 					break;
 
-			case 5: //DERK
+			case 5: newBoard.setCharAt(55, cPlayer);
 					break;
 
-			case 6: //DERK
+			case 6: newBoard.setCharAt(59, cPlayer);
 					break;
 
-			case 7: //DERK
+			case 7: newBoard.setCharAt(83, cPlayer);
 					break;
 
-			case 8: //DERK
+			case 8: newBoard.setCharAt(87, cPlayer);
 					break;
 
-			case 9: //DERK
+			case 9: newBoard.setCharAt(91, cPlayer);
 					break;
 		}
 		board = newBoard.toString();
