@@ -14,7 +14,7 @@ public class TestInterface {
 
 	@Test
 	public void testWelcomeMessage() {
-		assertEquals("Velkomin í myllu!\nVeldu 's' til að byrja eða 'd' fyrir leiðbeiningar.", TTTInterface.welcome());
+		assertEquals("Velkomin í myllu!\nVeldu 's' til að byrja\n      'd' fyrir leiðbeiningar.\n      'e' til að hætta.", TTTInterface.welcome());
 	}
 
 	@Test

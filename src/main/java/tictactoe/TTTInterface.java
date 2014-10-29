@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class TTTInterface {	
 	
 	public static String welcome() {
-		return "Velkomin í myllu!\nVeldu 's' til að byrja eða 'd' fyrir leiðbeiningar.";
+		return "Velkomin í myllu!\nVeldu 's' til að byrja\n      'd' fyrir leiðbeiningar.\n      'e' til að hætta.";
 	}
 
 	public static String run() {
@@ -20,6 +20,15 @@ public class TTTInterface {
 		} 
 		return mylla.printResults();
 	}
+	public static String instructions() {
+		String inst = new String();
+		inst += "Leikmaður velur eftirfarandi reiti með því að slá inn eina af tölunum á myndinni hér að neðan.\n";
+		inst += "||===========||\n|| 1 | 2 | 3 ||\n||===========||\n|| 4 | 5 | 6 ||\n||===========||\n|| 7 | 8 | 9 ||\n||===========||\n";
+		inst += "Alltaf er hægt að opna þessar leiðbeiningar með því að styðja á hnappinn 'd'.\n";
+		inst += "Alltaf er hægt að loka þessu forriti með því að styðja á hnappinn 'e'.\n";
+
+		return inst;
+	}
 
 	public static void main(String args[]) {
 		System.out.println(welcome());
@@ -30,10 +39,9 @@ public class TTTInterface {
 
 			if (input.equals("s")) {
 				System.out.println(run());
-				System.out.println("Veldu 's' til að spila aftur.");
+				System.out.println("Veldu 's' til að spila aftur\n      'e' til að hætta.");
 			} else if (input.equals("d")){
-				// Print directions
-				System.out.println("*leidbeiningar*");
+				System.out.println(instructions());
 			} else if (input.equals("e")){
 				System.out.println("Bless.");
 			} else {
