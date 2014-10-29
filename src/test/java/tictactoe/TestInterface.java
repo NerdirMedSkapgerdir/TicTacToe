@@ -42,7 +42,14 @@ public class TestInterface {
 	}
 
 	@Test
-	public void testGetPlayer() {
+	public void testGetPlayer1() {
 		assertEquals("Leikmaður 1", new TicTacToe().getPlayer());
+	}
+
+	@Test
+	public void testGetPlayer2() {
+		TicTacToe mylla = new TicTacToe();
+		mylla.updateBoard("4");
+		assertEquals("Leikmaður 2", mylla.getPlayer());
 	}
 }

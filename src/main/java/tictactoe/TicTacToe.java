@@ -70,7 +70,8 @@ public class TicTacToe {
 	}
 
 	public static String getPlayer() {
-		return "Leikmaður 1";
+		if(player) return "Leikmaður 1";
+		else return "Leikmaður 2";
 	}
 
 	public static String printResults() {
