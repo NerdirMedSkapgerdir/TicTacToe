@@ -23,4 +23,9 @@ public class TestInterface {
 		assertEquals("Ekki réttur innsláttur. Reyndu aftur.\nVeldu 's' til að byrja eða 'd' fyrir leiðbeiningar.", TTTInterface.choices("e"));
 		assertEquals("", TTTInterface.choices("d"));
 	}
+
+	@Test
+	public void testChangeBoard() {
+		assertEquals("||===========||\n|| X |   |   ||\n||===========||\n||   |   |   ||\n||===========||\n||   |   |   ||\n||===========||", TTTInterface.changeBoard(1, true));
+	}
 }

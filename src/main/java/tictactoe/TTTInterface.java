@@ -21,6 +21,10 @@ public class TTTInterface {
 		}
 	}
 
+	public static String changeBoard(int inp, boolean player) {
+		return "||===========||\n|| X |   |   ||\n||===========||\n||   |   |   ||\n||===========||\n||   |   |   ||\n||===========||";
+	}
+
 	public static void main(String args[]) {
 		System.out.println(welcome());
 		Scanner scan = new Scanner(System.in);
