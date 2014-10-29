@@ -66,7 +66,53 @@ public class TicTacToe {
 	}
 
 	public static boolean isFinished() {
-		return true;
+		char curr = 'X';
+		for(int i = 0; i < 2; i++) {
+			if(states[0] == curr) {
+				if(states[1] == curr) {
+					if(states[2] == curr)
+						return true;
+				}
+				if(states[4] == curr) {
+					if(states[8] == curr)
+						return true;
+				}
+				if(states[3] == curr) {
+					if(states[6] == curr)
+						return true;
+				}
+			}
+			if(states[1] == curr) {
+				if(states[4] == curr) {
+					if(states[7] == curr)
+						return true;
+				}
+			}
+			if(states[2] == curr) {
+				if(states[5] == curr) {
+					if(states[8] == curr)
+						return true;
+				}
+				if(states[4] == curr) {
+					if(states[6] == curr)
+						return true;
+				}
+			}
+			if(states[3] == curr) {
+				if(states[4] == curr) {
+					if(states[5] == curr)
+						return true;
+				}
+			}
+			if(states[6] == curr) {
+				if(states[7] == curr) {
+					if(states[8] == curr)
+						return true;
+				}
+			}
+			curr = 'O';
+		}
+		return false;
 	}
 
 	public static String getPlayer() {

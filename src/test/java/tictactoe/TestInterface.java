@@ -52,4 +52,26 @@ public class TestInterface {
 		mylla.updateBoard("4");
 		assertEquals("Leikmaður 2", mylla.getPlayer());
 	}
+
+	@Test
+	public void testIsFinished1() {
+		TicTacToe mylla = new TicTacToe();
+		mylla.updateBoard("1");
+		mylla.updateBoard("4");
+		mylla.updateBoard("2");
+		mylla.updateBoard("5");
+		mylla.updateBoard("3");
+		assertEquals(true, mylla.isFinished());	
+	}
+
+	@Test
+	public void testIsFinished2() {
+		TicTacToe mylla = new TicTacToe();
+		mylla.updateBoard("1");
+		mylla.updateBoard("4");
+		mylla.updateBoard("6");
+		mylla.updateBoard("5");
+		mylla.updateBoard("3");
+		assertEquals(false, mylla.isFinished());	
+	}
 }
