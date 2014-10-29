@@ -22,6 +22,7 @@ public class TicTacToe {
 	public static boolean updateBoard(String input) {
 		int inp;
 		if (input.equals("e")) {
+			System.out.println("Bless.");
 			System.exit(0);
 		}
 
