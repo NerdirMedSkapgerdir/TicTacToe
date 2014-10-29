@@ -14,6 +14,13 @@ public class TestInterface {
 
 	@Test
 	public void testWelcomeMessage() {
-		assertEquals("Velkomin í myllu!", TTTInterface.welcome());
+		assertEquals("Velkomin í myllu!\nVeldu 's' til að byrja eða 'd' fyrir leiðbeiningar.", TTTInterface.welcome());
+	}
+
+	@Test
+	public void testChoices() {
+		assertEquals("||===========||\n||   |   |   ||\n||===========||\n||   |   |   ||\n||===========||\n||   |   |   ||\n||===========||", TTTInterface.choices("s"));
+		assertEquals("Ekki réttur innsláttur. Reyndu aftur.\nVeldu 's' til að byrja eða 'd' fyrir leiðbeiningar.", TTTInterface.choices("e"));
+		assertEquals("", TTTInterface.choices("d"));
 	}
 }
