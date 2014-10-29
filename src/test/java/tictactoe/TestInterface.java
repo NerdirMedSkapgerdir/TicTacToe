@@ -29,8 +29,14 @@ public class TestInterface {
 	public void testChoicesDirections() {
 		assertEquals("", TTTInterface.choices("d"));
 	}
-		@Test
+	
+	@Test
 	public void testChoicesExit() {
 		assertEquals("Bless.", TTTInterface.choices("e"));
+	}
+	
+	@Test
+	public void testChangeBoard() {
+		assertEquals("||===========||\n|| X |   |   ||\n||===========||\n||   |   |   ||\n||===========||\n||   |   |   ||\n||===========||", TTTInterface.changeBoard(1, true));
 	}
 }

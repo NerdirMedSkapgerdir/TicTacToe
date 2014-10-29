@@ -19,19 +19,24 @@ public class TTTInterface {
 		} else if (input.equals("e")){
 			// Print directions
 			return "Bless.";
-				
 		} else {
 			return "Ekki réttur innsláttur. Reyndu aftur.\nVeldu 's' til að byrja\n      'd' fyrir leiðbeiningar.\n      'e' til að hætta.";
 		}
 	}
 
+	public static String changeBoard(int inp, boolean player) {
+		return "||===========||\n|| X |   |   ||\n||===========||\n||   |   |   ||\n||===========||\n||   |   |   ||\n||===========||";
+	}
+
 	public static void main(String args[]) {
 		System.out.println(welcome());
 		String input;
+		
 		do {
 			Scanner scan = new Scanner(System.in);
 			input = scan.nextLine();
 			System.out.println(choices(input));
 		} while (!input.equals("e"));
+
 	}
 }
