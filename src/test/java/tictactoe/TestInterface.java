@@ -18,6 +18,11 @@ public class TestInterface {
 	}
 
 	@Test
+	public void testInstructions() {
+		assertEquals("Leikmaður velur eftirfarandi reiti með því að slá inn eina af tölunum á myndinni hér að neðan.\n||===========||\n|| 1 | 2 | 3 ||\n||===========||\n|| 4 | 5 | 6 ||\n||===========||\n|| 7 | 8 | 9 ||\n||===========||\nAlltaf er hægt að loka þessu forriti með því að styðja á hnappinn 'e'.\n", TTTInterface.instructions());
+	}
+
+	@Test
 	public void testUpdateBoard() {
 		TicTacToe mylla = new TicTacToe();
 		mylla.updateBoard("1");
@@ -79,6 +84,65 @@ public class TestInterface {
 	@Test
 	public void testIsFinished2() {
 		TicTacToe mylla = new TicTacToe();
+		mylla.updateBoard("2");
+		mylla.updateBoard("9");
+		mylla.updateBoard("5");
+		mylla.updateBoard("1");
+		mylla.updateBoard("8");
+		assertEquals(true, mylla.isFinished());	
+	}
+
+		@Test
+	public void testIsFinished3() {
+		TicTacToe mylla = new TicTacToe();
+		mylla.updateBoard("3");
+		mylla.updateBoard("2");
+		mylla.updateBoard("6");
+		mylla.updateBoard("1");
+		mylla.updateBoard("9");
+		assertEquals(true, mylla.isFinished());	
+	}
+
+		@Test
+	public void testIsFinished4() {
+		TicTacToe mylla = new TicTacToe();
+		mylla.updateBoard("3");
+		mylla.updateBoard("9");
+		mylla.updateBoard("5");
+		mylla.updateBoard("6");
+		mylla.updateBoard("7");
+		assertEquals(true, mylla.isFinished());	
+	}
+
+		@Test
+	public void testIsFinished5() {
+		TicTacToe mylla = new TicTacToe();
+		mylla.updateBoard("1");
+		mylla.updateBoard("4");
+		mylla.updateBoard("8");
+		mylla.updateBoard("5");
+		mylla.updateBoard("9");
+		mylla.updateBoard("6");
+		assertEquals(true, mylla.isFinished());	
+	}
+
+	@Test
+	public void testIsFinished6() {
+		TicTacToe mylla = new TicTacToe();
+		mylla.updateBoard("1");
+		mylla.updateBoard("7");
+		mylla.updateBoard("2");
+		mylla.updateBoard("8");
+		mylla.updateBoard("6");
+		mylla.updateBoard("9");
+		assertEquals(true, mylla.isFinished());	
+	}
+
+
+
+	@Test
+	public void testIsFinished7() {
+		TicTacToe mylla = new TicTacToe();
 		mylla.updateBoard("1");
 		mylla.updateBoard("4");
 		mylla.updateBoard("6");
@@ -127,4 +191,6 @@ public class TestInterface {
 		assertEquals(true, mylla.isFinished());
 		assertEquals("||===========||\n|| X | O | X ||\n||===========||\n|| X | X | O ||\n||===========||\n|| O | X | O ||\n||===========||\nJafntefli!", mylla.printResults());
 	}
+
+
 }

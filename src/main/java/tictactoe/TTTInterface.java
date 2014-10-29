@@ -2,10 +2,6 @@ package tictactoe;
 import java.util.Scanner;
 
 public class TTTInterface {	
-	
-	public static String welcome() {
-		return "Velkomin í myllu!\nVeldu 's' til að byrja\n      'd' fyrir leiðbeiningar.\n      'e' til að hætta.";
-	}
 
 	public static String run() {
 		TicTacToe mylla = new TicTacToe();
@@ -20,11 +16,15 @@ public class TTTInterface {
 		} 
 		return mylla.printResults();
 	}
+
+	public static String welcome() {
+		return "Velkomin í myllu!\nVeldu 's' til að byrja\n      'd' fyrir leiðbeiningar.\n      'e' til að hætta.";
+	}
+
 	public static String instructions() {
 		String inst = new String();
 		inst += "Leikmaður velur eftirfarandi reiti með því að slá inn eina af tölunum á myndinni hér að neðan.\n";
 		inst += "||===========||\n|| 1 | 2 | 3 ||\n||===========||\n|| 4 | 5 | 6 ||\n||===========||\n|| 7 | 8 | 9 ||\n||===========||\n";
-		inst += "Alltaf er hægt að opna þessar leiðbeiningar með því að styðja á hnappinn 'd'.\n";
 		inst += "Alltaf er hægt að loka þessu forriti með því að styðja á hnappinn 'e'.\n";
 
 		return inst;
