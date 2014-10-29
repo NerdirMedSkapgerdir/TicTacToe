@@ -16,16 +16,22 @@ public class TTTInterface {
 		} else if (input.equals("d")){
 			// Print directions
 			return "";
+		} else if (input.equals("e")){
+			// Print directions
+			return "Bless.";
+				
 		} else {
-			return "Ekki réttur innsláttur. Reyndu aftur.\nVeldu 's' til að byrja eða 'd' fyrir leiðbeiningar.";
+			return "Ekki réttur innsláttur. Reyndu aftur.\nVeldu 's' til að byrja\n      'd' fyrir leiðbeiningar.\n      'e' til að hætta.";
 		}
 	}
 
 	public static void main(String args[]) {
 		System.out.println(welcome());
-		Scanner scan = new Scanner(System.in);
-
-		String input = scan.nextLine();
-		System.out.println(choices(input));
+		String input;
+		do {
+			Scanner scan = new Scanner(System.in);
+			input = scan.nextLine();
+			System.out.println(choices(input));
+		} while (!input.equals("e"));
 	}
 }

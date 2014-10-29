@@ -18,9 +18,19 @@ public class TestInterface {
 	}
 
 	@Test
-	public void testChoices() {
+	public void testChoicesStart() {
 		assertEquals("||===========||\n||   |   |   ||\n||===========||\n||   |   |   ||\n||===========||\n||   |   |   ||\n||===========||", TTTInterface.choices("s"));
-		assertEquals("Ekki réttur innsláttur. Reyndu aftur.\nVeldu 's' til að byrja eða 'd' fyrir leiðbeiningar.", TTTInterface.choices("e"));
+	}
+	@Test
+	public void testChoicesWrongInput() {
+		assertEquals("Ekki réttur innsláttur. Reyndu aftur.\nVeldu 's' til að byrja\n      'd' fyrir leiðbeiningar.\n      'e' til að hætta.", TTTInterface.choices("m"));
+	}
+	@Test
+	public void testChoicesDirections() {
 		assertEquals("", TTTInterface.choices("d"));
+	}
+		@Test
+	public void testChoicesExit() {
+		assertEquals("Bless.", TTTInterface.choices("e"));
 	}
 }
