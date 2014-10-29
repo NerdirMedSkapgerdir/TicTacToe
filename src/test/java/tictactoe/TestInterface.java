@@ -19,7 +19,9 @@ public class TestInterface {
 
 	@Test
 	public void testUpdateBoard() {
-		assertEquals(true, new TicTacToe().updateBoard("1"));
+		TicTacToe mylla = new TicTacToe();
+		mylla.updateBoard("1");
+		assertEquals("||===========||\n|| X |   |   ||\n||===========||\n||   |   |   ||\n||===========||\n||   |   |   ||\n||===========||", mylla.drawBoard());
 	}
 
 	@Test
