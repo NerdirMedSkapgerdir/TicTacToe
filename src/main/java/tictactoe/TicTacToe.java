@@ -18,7 +18,13 @@ public class TicTacToe {
 	}
 
 	public static boolean updateBoard(String input) {
-		int inp = Integer.parseInt(input);
+		int inp;
+		try {  
+		  inp = Integer.parseInt(input);
+		}  
+		catch(NumberFormatException nfe) {  
+		  return false;  
+		}
 		if(inp < 1 || inp > 9) return false;
 		if(states[inp - 1] != 'E') return false;
 		char cPlayer;

@@ -48,6 +48,12 @@ public class TestInterface {
 	}
 
 	@Test
+	public void testUpdateBoardFail2() {
+		TicTacToe mylla = new TicTacToe();
+		assertEquals(false, mylla.updateBoard("hallo"));
+	}
+
+	@Test
 	public void testGetPlayer1() {
 		assertEquals("Leikmaður 1", new TicTacToe().getPlayer());
 	}
