@@ -5,16 +5,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div class="container">
+        <div class="container" id="index-page">
             <h1>#Mylla#</h1>
-            <form method="post" action="/start" class="form-inline" role="form">
+            <p id="welcome-message"></p>
+            <form method="post" action="/start" class="form-inline" role="form" id="start">
+                <button type="submit" id="start-button">Byrja</button>
+            </form>
+            <pre id="results"></pre>
+        </div>
+
+        <div class="container" id="play-page"  hidden>
+            <h1>#Mylla#</h1>
+            <form method="post" action="/play" class="form-inline" role="form" id="play">
                 <div class="form group">
-                    <input type="text" name="number" id="number" placeholder="1">
+                    <input type="text" name="number" id="move" placeholder="1-9">
                 </div>
-                <button type="submit">Byrja</button>
+                <button type="submit" id="play-button">Leika</button>
             </form>
             <hr>
-            <pre id="results"></pre>
+            <pre id="tictactoe-board"></pre>
             <hr>
         </div>
 
@@ -24,18 +33,50 @@
         <!-- Use ajax to submit form, retrive joke and display on page -->
         <script>
         $(document).ready(function() {
-            var form = $('form');
-            form.submit(function( event ) {
-                $.ajax({
-                    type: form.attr('method'),
-                    url: form.attr('action'),
-                    data: null
-                }).done(function(joke) {
-                    $('#results').html(joke).attr('class', 'alert alert-success');
+            
+            event.preventDefault();
+            $.ajax({
+                type: 'POST',
+                url: "/index",
+                data: null,
+                }).done(function(welcome) {
+                    $('#welcome-message').html(welcome).attr('class', 'alert alert-success');
+
+                }).fail(function() {
+                    $('#welcome-message').html('Ekki tókst að ná í kveðju.');
+                });
+
+            $('#start-button').click(function(e) {
+            event.preventDefault();
+            $.ajax({
+                type: $('#start').attr('method'),
+                url: $('#start').attr('action'),
+                data: null,
+                }).done(function(board) {
+                    $('#tictactoe-board').html(board).attr('class', 'alert alert-success');
+                    $('#index-page').hide();
+                    $('#play-page').show();
+
                 }).fail(function() {
                     $('#results').html('Error, no joke found...').attr('class', 'alert alert-danger');
                 });
-                event.preventDefault();
+            });
+
+            $('#play-button').click(function(e) {
+            event.preventDefault();
+            var number = $('#move').val();
+            $.ajax({
+                type: $('#play').attr('method'),
+                url: $('#play').attr('action'),
+                data: 'id=' + number
+                }).done(function(board) {
+                    $('#tictactoe-board').html(board);
+                    $('#move').empty();
+                    $('#move').focus();
+
+                }).fail(function() {
+                    $('#results').html('Error, no joke found...').attr('class', 'alert alert-danger');
+                });
             });
         });
         </script>

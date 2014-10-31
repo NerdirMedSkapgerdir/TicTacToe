@@ -30,6 +30,7 @@ public class TicTacToe {
 		  inp = Integer.parseInt(input);
 		}  
 		catch(NumberFormatException nfe) {  
+		  System.out.println(nfe.getMessage());
 		  return false;  
 		}
 		if(inp < 1 || inp > 9) return false;
@@ -140,10 +141,10 @@ public class TicTacToe {
 
 	public static String printResults() {
 		if(isTie) {
-			return board + "\nJafntefli!";
+			return board + "\n\nJafntefli!";
 		}
 		if(player) player = false;
 		else player = true;
-		return board + "\n" + getPlayer() + " hefur unnið!";
+		return board + "\n\n" + getPlayer() + " hefur unnið!";
 	}
 }
