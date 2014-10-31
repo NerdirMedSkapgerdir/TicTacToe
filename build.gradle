@@ -39,3 +39,5 @@ jacocoTestReport {
         html.destination "${buildDir}/reports/Code Coverage"
     }
 }
+
+task stage { dependsOn installApp }
