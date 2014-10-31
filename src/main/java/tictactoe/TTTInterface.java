@@ -7,26 +7,24 @@ public class TTTInterface {
 		TicTacToe mylla = new TicTacToe();
 		while(!mylla.isFinished()) {
 			System.out.println(mylla.drawBoard());
-			System.out.println(mylla.getPlayer() + " á leik.");
+			System.out.println(mylla.getPlayer() + " a leik.");
 			Scanner scan = new Scanner(System.in);
 			while(!mylla.updateBoard(scan.nextLine())) {
-				System.out.println("Ógilt inntak eða reitur nú þegar fylltur, reyndu aftur.");
-				System.out.println(mylla.getPlayer() + " á leik.");
+				System.out.println("Ogilt inntak eða reitur nu thegar fylltur, reyndu aftur.");
+				System.out.println(mylla.getPlayer() + " a leik.");
 			} 
 		} 
 		return mylla.printResults();
 	}
 
 	public static String welcome() {
-		return "Velkomin í myllu!\nVeldu 's' til að byrja\n      'd' fyrir leiðbeiningar.\n      'e' til að hætta.";
+		return "Velkomin í myllu!\n";
 	}
 
 	public static String instructions() {
 		String inst = new String();
-		inst += "Leikmaður velur eftirfarandi reiti með því að slá inn eina af tölunum á myndinni hér að neðan.\n";
+		inst += "Leikmadur slaer inn tolu a bilinu 1-9 til að velja reit til að setja taknid sitt i.\n";
 		inst += "||===========||\n|| 1 | 2 | 3 ||\n||===========||\n|| 4 | 5 | 6 ||\n||===========||\n|| 7 | 8 | 9 ||\n||===========||\n";
-		inst += "Alltaf er hægt að loka þessu forriti með því að styðja á hnappinn 'e'.\n";
-
 		return inst;
 	}
 
@@ -39,13 +37,12 @@ public class TTTInterface {
 
 			if (input.equals("s")) {
 				System.out.println(run());
-				System.out.println("Veldu 's' til að spila aftur\n      'e' til að hætta.");
 			} else if (input.equals("d")){
 				System.out.println(instructions());
 			} else if (input.equals("e")){
 				System.out.println("Bless.");
 			} else {
-				System.out.println("Ekki réttur innsláttur. Reyndu aftur.\nVeldu 's' til að byrja\n      'd' fyrir leiðbeiningar.\n      'e' til að hætta.");
+				System.out.println("Ekki rettur innslattur. Reyndu aftur.\nVeldu 's' til að byrja\n      'd' fyrir leidbeiningar.\n      'e' til að haetta.");
 			}
 		} while (!input.equals("e"));
 	}
