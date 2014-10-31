@@ -42,7 +42,7 @@ public class TTTInterface {
 			} else if (input.equals("e")){
 				System.out.println("Bless.");
 			} else {
-				System.out.println("Ekki rettur innslattur. Reyndu aftur.\nVeldu 's' til ad byrja\n      'd' fyrir leidbeiningar.\n      'e' til að haetta.");
+				System.out.println("Ekki rettur innslattur. Reyndu aftur.\nVeldu 's' til ad byrja\n      'd' fyrir leidbeiningar.\n      'e' til ad haetta.");
 			}
 		} while (!input.equals("e"));
 	}
