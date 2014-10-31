@@ -17,10 +17,12 @@
         <div class="container" id="play-page"  hidden>
             <h1>#Mylla#</h1>
             <form method="post" action="/play" class="form-inline" role="form" id="play">
-                <div class="form group">
+                <div class="form group" id="input-move">
                     <input type="text" name="number" id="move" placeholder="1-9">
+                    <button type="submit" id="play-button">Leika</button>
                 </div>
-                <button type="submit" id="play-button">Leika</button>
+                <button type="submit" id="replay-button" hidden>Spila aftur</button>
+                
             </form>
             <hr>
             <pre id="tictactoe-board"></pre>
@@ -68,12 +70,15 @@
             $.ajax({
                 type: $('#play').attr('method'),
                 url: $('#play').attr('action'),
-                data: 'id=' + number
+                data: 'id=' + number,
                 }).done(function(board) {
                     $('#tictactoe-board').html(board);
-                    $('#move').empty();
+                    $('#move').val('');
                     $('#move').focus();
-
+                    if((board.indexOf("hefur") > -1 && board.indexOf("unni") > -1) || board.indexOf("Jafntefli") > -1) {
+                        $('#input-move').hide();
+                        $('#replay-button').show();
+                    }
                 }).fail(function() {
                     $('#results').html('Error, no joke found...').attr('class', 'alert alert-danger');
                 });
