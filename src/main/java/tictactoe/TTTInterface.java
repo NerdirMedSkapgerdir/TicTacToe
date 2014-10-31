@@ -10,7 +10,7 @@ public class TTTInterface {
 			System.out.println(mylla.getPlayer() + " a leik.");
 			Scanner scan = new Scanner(System.in);
 			while(!mylla.updateBoard(scan.nextLine())) {
-				System.out.println("Ogilt inntak eða reitur nu thegar fylltur, reyndu aftur.");
+				System.out.println("Ogilt inntak eda reitur nu thegar fylltur, reyndu aftur.");
 				System.out.println(mylla.getPlayer() + " a leik.");
 			} 
 		} 
@@ -18,12 +18,12 @@ public class TTTInterface {
 	}
 
 	public static String welcome() {
-		return "Velkomin í myllu!\n";
+		return "Velkomin i myllu!\n";
 	}
 
 	public static String instructions() {
 		String inst = new String();
-		inst += "Leikmadur slaer inn tolu a bilinu 1-9 til að velja reit til að setja taknid sitt i.\n";
+		inst += "Leikmadur slaer inn tolu a bilinu 1-9 til ad velja reit til ad setja taknid sitt i.\n";
 		inst += "||===========||\n|| 1 | 2 | 3 ||\n||===========||\n|| 4 | 5 | 6 ||\n||===========||\n|| 7 | 8 | 9 ||\n||===========||\n";
 		return inst;
 	}
@@ -42,7 +42,7 @@ public class TTTInterface {
 			} else if (input.equals("e")){
 				System.out.println("Bless.");
 			} else {
-				System.out.println("Ekki rettur innslattur. Reyndu aftur.\nVeldu 's' til að byrja\n      'd' fyrir leidbeiningar.\n      'e' til að haetta.");
+				System.out.println("Ekki rettur innslattur. Reyndu aftur.\nVeldu 's' til ad byrja\n      'd' fyrir leidbeiningar.\n      'e' til að haetta.");
 			}
 		} while (!input.equals("e"));
 	}

@@ -14,12 +14,12 @@ public class TestInterface {
 
 	@Test
 	public void testWelcomeMessage() {
-		assertEquals("Velkomin í myllu!\n", TTTInterface.welcome());
+		assertEquals("Velkomin i myllu!\n", TTTInterface.welcome());
 	}
 
 	@Test
 	public void testInstructions() {
-		assertEquals("Leikmadur slaer inn tolu a bilinu 1-9 til að velja reit til að setja taknid sitt i.\n||===========||\n|| 1 | 2 | 3 ||\n||===========||\n|| 4 | 5 | 6 ||\n||===========||\n|| 7 | 8 | 9 ||\n||===========||\n", TTTInterface.instructions());
+		assertEquals("Leikmadur slaer inn tolu a bilinu 1-9 til ad velja reit til ad setja taknid sitt i.\n||===========||\n|| 1 | 2 | 3 ||\n||===========||\n|| 4 | 5 | 6 ||\n||===========||\n|| 7 | 8 | 9 ||\n||===========||\n", TTTInterface.instructions());
 	}
 
 	@Test
