@@ -39,7 +39,7 @@ public class TTTWeb implements SparkApplication {
         	post(new Route("/start"){
             		@Override
             		public Object handle(Request request, Response response){
-                		String board = mylla.drawBoard() + "<br/><br/>" +  mylla.getPlayer() + " á leik";
+                		String board = mylla.drawBoard() + "<br/><br/>" +  mylla.getPlayer() + " a leik";
                 		return board;
             		}
         	});
@@ -54,7 +54,7 @@ public class TTTWeb implements SparkApplication {
                         return mylla.printResults();
                     }
                     
-                    return mylla.drawBoard() + "<br/><br/>" + mylla.getPlayer() + " á leik";
+                    return mylla.drawBoard() + "<br/><br/>" + mylla.getPlayer() + " a leik";
                 }
             });
     }

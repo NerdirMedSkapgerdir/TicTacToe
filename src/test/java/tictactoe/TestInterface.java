@@ -14,12 +14,12 @@ public class TestInterface {
 
 	@Test
 	public void testWelcomeMessage() {
-		assertEquals("Velkomin í myllu!\nVeldu 's' til að byrja\n      'd' fyrir leiðbeiningar.\n      'e' til að hætta.", TTTInterface.welcome());
+		assertEquals("Velkomin i myllu!\n", TTTInterface.welcome());
 	}
 
 	@Test
 	public void testInstructions() {
-		assertEquals("Leikmaður velur eftirfarandi reiti með því að slá inn eina af tölunum á myndinni hér að neðan.\n||===========||\n|| 1 | 2 | 3 ||\n||===========||\n|| 4 | 5 | 6 ||\n||===========||\n|| 7 | 8 | 9 ||\n||===========||\nAlltaf er hægt að loka þessu forriti með því að styðja á hnappinn 'e'.\n", TTTInterface.instructions());
+		assertEquals("Leikmadur slaer inn tolu a bilinu 1-9 til ad velja reit til ad setja taknid sitt i.\n||===========||\n|| 1 | 2 | 3 ||\n||===========||\n|| 4 | 5 | 6 ||\n||===========||\n|| 7 | 8 | 9 ||\n||===========||\n", TTTInterface.instructions());
 	}
 
 	@Test
@@ -60,14 +60,14 @@ public class TestInterface {
 
 	@Test
 	public void testGetPlayer1() {
-		assertEquals("Leikmaður 1", new TicTacToe().getPlayer());
+		assertEquals("Leikmadur 1", new TicTacToe().getPlayer());
 	}
 
 	@Test
 	public void testGetPlayer2() {
 		TicTacToe mylla = new TicTacToe();
 		mylla.updateBoard("4");
-		assertEquals("Leikmaður 2", mylla.getPlayer());
+		assertEquals("Leikmadur 2", mylla.getPlayer());
 	}
 
 	@Test
@@ -160,7 +160,7 @@ public class TestInterface {
 		mylla.updateBoard("3");
 		mylla.updateBoard("9");
 		assertEquals(true, mylla.isFinished());
-		assertEquals("||===========||\n|| X | O | O ||\n||===========||\n||   | X |   ||\n||===========||\n||   |   | X ||\n||===========||\n\nLeikmaður 1 hefur unnið!", mylla.printResults());
+		assertEquals("||===========||\n|| X | O | O ||\n||===========||\n||   | X |   ||\n||===========||\n||   |   | X ||\n||===========||\n\nLeikmadur 1 hefur unnid!", mylla.printResults());
 	}
 
 	@Test
@@ -173,7 +173,7 @@ public class TestInterface {
 		mylla.updateBoard("8");
 		mylla.updateBoard("7");
 		assertEquals(true, mylla.isFinished());
-		assertEquals("||===========||\n|| O | X | X ||\n||===========||\n|| O |   |   ||\n||===========||\n|| O | X |   ||\n||===========||\n\nLeikmaður 2 hefur unnið!", mylla.printResults());
+		assertEquals("||===========||\n|| O | X | X ||\n||===========||\n|| O |   |   ||\n||===========||\n|| O | X |   ||\n||===========||\n\nLeikmadur 2 hefur unnid!", mylla.printResults());
 	}
 
 	@Test
