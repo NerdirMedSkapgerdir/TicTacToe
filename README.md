@@ -10,4 +10,4 @@ Click here for the [development manual.](manuals/dev_manual.md)
 
 ## Travis
 
-*INSERT TRAVIS IMG*
+[![Build Status](https://travis-ci.org/NerdirMedSkapgerdir/TicTacToe.svg?branch=master)](https://travis-ci.org/NerdirMedSkapgerdir/TicTacToe)
