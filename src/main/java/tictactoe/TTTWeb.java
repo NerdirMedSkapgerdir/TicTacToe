@@ -50,7 +50,6 @@ public class TTTWeb implements SparkApplication {
 				System.out.println("0");
                     String input = request.queryParams("id");
                     mylla.updateBoard(input);
-    				System.out.println(mylla.drawBoard());
 
     				if (mylla.isFinished())
                         return mylla.printResults();

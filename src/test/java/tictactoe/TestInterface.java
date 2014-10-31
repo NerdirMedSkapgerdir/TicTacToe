@@ -160,7 +160,7 @@ public class TestInterface {
 		mylla.updateBoard("3");
 		mylla.updateBoard("9");
 		assertEquals(true, mylla.isFinished());
-		assertEquals("||===========||\n|| X | O | O ||\n||===========||\n||   | X |   ||\n||===========||\n||   |   | X ||\n||===========||\nLeikmaður 1 hefur unnið!", mylla.printResults());
+		assertEquals("||===========||\n|| X | O | O ||\n||===========||\n||   | X |   ||\n||===========||\n||   |   | X ||\n||===========||\n\nLeikmaður 1 hefur unnið!", mylla.printResults());
 	}
 
 	@Test
@@ -173,7 +173,7 @@ public class TestInterface {
 		mylla.updateBoard("8");
 		mylla.updateBoard("7");
 		assertEquals(true, mylla.isFinished());
-		assertEquals("||===========||\n|| O | X | X ||\n||===========||\n|| O |   |   ||\n||===========||\n|| O | X |   ||\n||===========||\nLeikmaður 2 hefur unnið!", mylla.printResults());
+		assertEquals("||===========||\n|| O | X | X ||\n||===========||\n|| O |   |   ||\n||===========||\n|| O | X |   ||\n||===========||\n\nLeikmaður 2 hefur unnið!", mylla.printResults());
 	}
 
 	@Test
@@ -189,7 +189,7 @@ public class TestInterface {
 		mylla.updateBoard("9");
 		mylla.updateBoard("8");
 		assertEquals(true, mylla.isFinished());
-		assertEquals("||===========||\n|| X | O | X ||\n||===========||\n|| X | X | O ||\n||===========||\n|| O | X | O ||\n||===========||\nJafntefli!", mylla.printResults());
+		assertEquals("||===========||\n|| X | O | X ||\n||===========||\n|| X | X | O ||\n||===========||\n|| O | X | O ||\n||===========||\n\nJafntefli!", mylla.printResults());
 	}
 
 
