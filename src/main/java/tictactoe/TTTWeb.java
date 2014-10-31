@@ -20,7 +20,7 @@ public class TTTWeb implements SparkApplication {
         	final TTTInterface vidmot = new TTTInterface();
 		final TicTacToe mylla = new TicTacToe();
 
-		post(new Route("/welcome"){
+		post(new Route("/index"){
 			@Override
 			public Object handle(Request request, Response response){
 				String welcome = vidmot.welcome();
@@ -39,7 +39,7 @@ public class TTTWeb implements SparkApplication {
         	post(new Route("/start"){
             		@Override
             		public Object handle(Request request, Response response){
-                		String board = mylla.drawBoard() + mylla.getPlayer() + " á leik";
+                		String board = mylla.drawBoard() + "<br>" +  mylla.getPlayer() + " á leik";
                 		return board;
             		}
         	});
@@ -54,16 +54,6 @@ public class TTTWeb implements SparkApplication {
 					return board + "\nJafntefli!";
 				if (mylla.isFinished())
 					return board + mylla.getPlayer() + " hefur unnið!";
-                                return board;
-                        }
-                });
-
-		post(new Route("/play"){
-                        @Override
-                        public Object handle(Request request, Response response){
-                                String input = request.queryParams("input");
-                                mylla.updateBoard(input);
-                                String board = mylla.drawBoard() + mylla.getPlayer() + " á leik";
                                 return board;
                         }
                 });
