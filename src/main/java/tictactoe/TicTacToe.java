@@ -144,8 +144,8 @@ public class TicTacToe {
 	}
 
 	public static String getPlayer() {
-		if(player) return "Leikmaður 1";
-		else return "Leikmaður 2";
+		if(player) return "Leikmadur 1";
+		else return "Leikmadur 2";
 	}
 
 	public static String printResults() {
@@ -154,6 +154,6 @@ public class TicTacToe {
 		}
 		if(player) player = false;
 		else player = true;
-		return board + "\n\n" + getPlayer() + " hefur unnið!";
+		return board + "\n\n" + getPlayer() + " hefur unnid!";
 	}
 }
