@@ -2,14 +2,16 @@ language: java
 jdk:
 - openjdk7
 - oraclejdk7
-script:
-- "./gradlew check"
-- "./gradlew seleniumXvfb"
 env:
 - TERM=dumb
+script:
+- "./bin/clean"
+- "./bin/check"
+- "./bin/build"
 after_success:
+- "./bin/unit_test"
 - "./gradlew jacocoTestReport coveralls"
-
+after_success:
 deploy:
   provider: heroku
   api_key:
@@ -17,3 +19,7 @@ deploy:
   app: nerdir
   on:
     repo: NerdirMedSkapgerdir/TicTacToe
+after_deploy:
+- "./gradlew seleniumXvfb"
+
+
