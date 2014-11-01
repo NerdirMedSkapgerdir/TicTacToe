@@ -17,31 +17,21 @@ public class TTTWeb implements SparkApplication {
 	}
 
 	public void init(){
-        	final TTTInterface vidmot = new TTTInterface();
 		final TicTacToe mylla = new TicTacToe();
 
 		post(new Route("/index") {
 			@Override
 			public Object handle(Request request, Response response){
-				String welcome = vidmot.welcome();
-				return welcome;
+				String greet = mylla.welcome();
+				return greet;
 			}
 		});
-
-		post(new Route("/instructions") {
-                        @Override
-                        public Object handle(Request request, Response response){
-                                String instr = vidmot.instructions();
-                                return instr;
-                        }
-                });
 
         	post(new Route("/start"){
             		@Override
             		public Object handle(Request request, Response response){
                         mylla.clearBoard();
-                		String board = mylla.drawBoard() + "<br/><br/>" +  mylla.getPlayer() + " a leik";
-                		return board;
+                		return mylla.drawBoard() + "<br/><br/>" +  mylla.getPlayer() + " a leik";
             		}
         	});
 
@@ -53,10 +43,9 @@ public class TTTWeb implements SparkApplication {
                     return mylla.drawBoard() + "<br/> Ogilt inntak eda reitur nu thegar fylltur, reyndu aftur.<br/>" + mylla.getPlayer() + " a leik";
                 }
 
-				if (mylla.isFinished()) {
+		if (mylla.isFinished()) {
                     return mylla.printResults();
                 }
-                
                 return mylla.drawBoard() + "<br/><br/>" + mylla.getPlayer() + " a leik";
             }
         });
