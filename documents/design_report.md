@@ -14,4 +14,4 @@ Hópurinn setti svo upp nýtt klasarit áður en byrjað var að forrita:
 ![alt tag](https://raw.github.com/NerdirMedSkapgerdir/TicTacToe/master/documents/klasarit.jpg)
 
 
-Að lokum hentum við svo TTTInterface klasanum eftir að við vefvæddum verkefnið en í stað hans kom TTTWeb klasinn. Föllunum Instructions() og run() voru hent þar sem þau voru óþörf, en fallið welcome() var fært yfir í TicTacToe klasann.
+Að lokum hentum við svo TTTInterface klasanum eftir að við vefvæddum verkefnið en í stað hans kom TTTWeb klasinn. Föllunum instructions() og run() var hent þar sem þau voru óþörf, en fallið welcome() var fært yfir í TicTacToe klasann. Einnig bættum við við einu falli í TicTacToe, clearBoard().
