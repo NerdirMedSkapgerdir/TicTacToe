@@ -5,12 +5,12 @@ jdk:
 env:
 - TERM=dumb
 script:
-- "./gradlew clean"
-- "./gradlew check"
-after_success:
-- "./gradlew test"
+- "./gradlew clean" &&
+- "./gradlew check" &&
+- "./gradlew build" &&
+- "./gradlew test" &&
 - "./gradlew jacocoTestReport coveralls"
-after_success:
+
 deploy:
   provider: heroku
   api_key:
