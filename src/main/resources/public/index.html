@@ -18,17 +18,14 @@
             <h1>#Mylla#</h1>
             <p id="welcome-message"></p>
                 <button type="submit" onclick="start()" id="start-button">Byrja</button>
-            <pre id="results"></pre>
+            <p id="message"></p>
         </div>
 
         <div class="container" id="play-page"  hidden>
             <h1>#Mylla#</h1>
-                
-                    <input type="text" name="number" id="move" placeholder="1-9">
-                    <button type="submit" onclick="play()" id="play-button">Leika</button>
-                
-                <button type="submit" id="replay-button" onclick="replay()" hidden>Spila aftur</button>
-                
+            <input type="text" name="number" id="move" placeholder="1-9">
+            <button type="submit" onclick="play()" id="play-button">Leika</button>
+            <button type="submit" id="replay-button" onclick="replay()" hidden>Spila aftur</button>
             <hr>
             <pre id="tictactoe-board"></pre>
             <hr>
@@ -45,7 +42,7 @@
                 url: "/index",
                 data: null
                 }).done(function(welcome) {
-                    $('#welcome-message').html(welcome).attr('class', 'alert alert-success');
+                    $('#welcome-message').html(welcome);
 
                 }).fail(function() {
                     $('#welcome-message').html('Ekki tokst ad na í kvedju...');
@@ -58,12 +55,12 @@
                     url: '/start',
                     data: null,
                     }).done(function(board) {
-                        $('#tictactoe-board').html(board).attr('class', 'alert alert-success');
+                        $('#tictactoe-board').html(board);
                         $('#index-page').hide();
                         $('#play-page').show();
 
                     }).fail(function() {
-                        $('#results').html('Error, no joke found...').attr('class', 'alert alert-danger');
+                        $('#message').html('Villa kom upp. Vinsamlega reynid aftur sidar.');
                     });
                 event.preventDefault();}
 
@@ -84,7 +81,7 @@
                             $('#replay-button').show();
                         }
                     }).fail(function() {
-                        $('#tictactoe-board').html('Villa kom upp. Vinsamlega reynið aftur síðar.')
+                        $('#tictactoe-board').html('Villa kom upp. Vinsamlega reynid aftur sidar.');
                     });
                 event.preventDefault();}
 
@@ -99,7 +96,7 @@
                     $("#play-button").show();
                     $("#move").show();
                 }).fail(function() {
-                    $('#tictactoe-board').html('Villa kom upp. Vinsamlega reynið aftur síðar.');
+                    $('#tictactoe-board').html('Villa kom upp. Vinsamlega reynid aftur sidar.');
                 });
             event.preventDefault();}
         </script>
