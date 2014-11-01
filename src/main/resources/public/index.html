@@ -10,42 +10,37 @@
                   font-size:30px;
 		  text-align:center;}
 	    h1   {color:rgb(200,100,100);}
-            p    {color:rgb(100,100,200);}
+        p    {color:rgb(100,100,200);}
 	</style>
     </head>
     <body>
         <div class="container" id="index-page">
             <h1>#Mylla#</h1>
             <p id="welcome-message"></p>
-            <form method="post" action="/start" class="form-inline" role="form" id="start">
-                <button type="submit" id="start-button">Byrja</button>
-            </form>
+                <button type="submit" onclick="start()" id="start-button">Byrja</button>
             <pre id="results"></pre>
         </div>
 
         <div class="container" id="play-page"  hidden>
             <h1>#Mylla#</h1>
-            <form method="post" action="/play" class="form-inline" role="form" id="play">
                 
                     <input type="text" name="number" id="move" placeholder="1-9">
-                    <button type="submit" id="play-button">Leika</button>
+                    <button type="submit" onclick="play()" id="play-button">Leika</button>
                 
-                <button type="submit" id="replay-button" hidden>Spila aftur</button>
+                <button type="submit" id="replay-button" onclick="replay()" hidden>Spila aftur</button>
                 
-            </form>
             <hr>
             <pre id="tictactoe-board"></pre>
             <hr>
         </div>
 
         <!-- Load jquery -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
 
         <!-- Use ajax to submit form, retrive joke and display on page -->
-        <script>
+        <script type="text/javascript">
+        
         $(document).ready(function() {
-            
-            event.preventDefault();
             $.ajax({
                 type: 'POST',
                 url: "/index",
@@ -57,46 +52,44 @@
                     $('#welcome-message').html('Ekki tókst að ná í kveðju.');
                 });
 
-            $('#start-button').click(function(e) {
-            event.preventDefault();
-            $.ajax({
-                type: $('#start').attr('method'),
-                url: $('#start').attr('action'),
-                data: null,
-                }).done(function(board) {
-                    $('#tictactoe-board').html(board).attr('class', 'alert alert-success');
-                    $('#index-page').hide();
-                    $('#play-page').show();
+            event.preventDefault();});
 
-                }).fail(function() {
-                    $('#results').html('Error, no joke found...').attr('class', 'alert alert-danger');
-                });
-            });
+        function start() {
+                $.ajax({
+                    type: 'POST',
+                    url: '/start',
+                    data: null,
+                    }).done(function(board) {
+                        $('#tictactoe-board').html(board).attr('class', 'alert alert-success');
+                        $('#index-page').hide();
+                        $('#play-page').show();
 
-            $('#play-button').click(function(e) {
-            event.preventDefault();
+                    }).fail(function() {
+                        $('#results').html('Error, no joke found...').attr('class', 'alert alert-danger');
+                    });
+                event.preventDefault();}
+
+        function play() {
             var number = $('#move').val();
-            $.ajax({
-                type: $('#play').attr('method'),
-                url: $('#play').attr('action'),
-                data: 'id=' + number,
-                }).done(function(board) {
-                    $('#tictactoe-board').html(board);
-                    $('#move').val('');
-                    $('#move').focus();
-                    if((board.indexOf("hefur") > -1 && board.indexOf("unni") > -1) || board.indexOf("Jafntefli") > -1) {
-                        $("#play-button").hide();
-                        $("#move").hide();
-                        $('#replay-button').show();
-                    }
-                }).fail(function() {
-                    $('#tictactoe-board').html('Villa kom upp. Vinsamlega reynið aftur síðar.')
-                });
-            });
+                $.ajax({
+                    type: 'POST',
+                    url: '/play',
+                    data: 'id=' + number,
+                    }).done(function(board) {
+                        $('#tictactoe-board').html(board);
+                        $('#move').val('');
+                        $('#move').focus();
+                        if((board.indexOf("hefur") > -1 && board.indexOf("unni") > -1) || board.indexOf("Jafntefli") > -1) {
+                            $("#play-button").hide();
+                            $("#move").hide();
+                            $('#replay-button').show();
+                        }
+                    }).fail(function() {
+                        $('#tictactoe-board').html('Villa kom upp. Vinsamlega reynið aftur síðar.')
+                    });
+                event.preventDefault();}
 
-            $('#replay-button').click(function(e) {
-            event.preventDefault();
-            var number = $('#move').val();
+        function replay() {
             $.ajax({
                 type: 'POST',
                 url: '/reset',
@@ -109,9 +102,7 @@
                 }).fail(function() {
                     $('#tictactoe-board').html('Villa kom upp. Vinsamlega reynið aftur síðar.');
                 });
-            });
-
-        });
+            event.preventDefault();}
         </script>
     </body>
 </html>
