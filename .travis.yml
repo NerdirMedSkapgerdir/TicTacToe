@@ -7,7 +7,6 @@ env:
 script:
 - "./gradlew clean"
 - "./gradlew check"
-- "./gradlew build"
 after_success:
 - "./gradlew test"
 - "./gradlew jacocoTestReport coveralls"
