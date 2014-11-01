@@ -18,7 +18,7 @@ public class MyllaWebTest {
   @Before
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
-    baseUrl = "https://tttaegir.herokuapp.com";
+    baseUrl = "https://nerdir.herokuapp.com";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
