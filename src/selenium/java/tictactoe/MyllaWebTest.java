@@ -1,4 +1,4 @@
-package is.ru.sparkit;
+package tictactoe;
 
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
@@ -23,7 +23,7 @@ public class MyllaWebTest {
   }
 
   @Test
-  public void testGoogleWeb() throws Exception {
+  public void testMyllaWeb() throws Exception {
     driver.get(baseUrl + "/");
     try {
       assertEquals("Mylla", driver.getTitle());
