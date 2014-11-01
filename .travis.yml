@@ -15,12 +15,10 @@ script:
 - "./gradlew test" 
 - "./gradlew jacocoTestReport coveralls"
 
-after_script:
 addons:
   coverity_scan:
     project:
       name: "NerdirMedSkapgerdir/TicTacToe"
-      description: "Build submitted via Travis CI"
     notification_email: bergthor13@ru.is
     build_command_prepend: "mvn clean"
     build_command:   "mvn -DskipTests=true compile"
