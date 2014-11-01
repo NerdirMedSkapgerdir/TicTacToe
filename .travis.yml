@@ -2,10 +2,11 @@ language: java
 jdk:
 - openjdk7
 - oraclejdk7
-env:
-- TERM=dumb
+
+env:  
   global:
-  - secure: "AAcd722e1XF6uE/sCyHyunlWe4/Eu17LBo8vIxXnwSvP+AJVaJm2zszqXY7nhggLXOWSu19yVIPpXpl3nq4oP1j6KZei7TdCgQKMce6Ii9Wt2lfmjZ8cpi8scZtnh8lB31uC0iHuKhIGjOnvZkkEtf+HXALpADLOWuKi0zCEdO0="
+    - TERM=dumb
+    - secure: "AAcd722e1XF6uE/sCyHyunlWe4/Eu17LBo8vIxXnwSvP+AJVaJm2zszqXY7nhggLXOWSu19yVIPpXpl3nq4oP1j6KZei7TdCgQKMce6Ii9Wt2lfmjZ8cpi8scZtnh8lB31uC0iHuKhIGjOnvZkkEtf+HXALpADLOWuKi0zCEdO0="
 
 script: 
 - "./gradlew clean" 
