@@ -15,6 +15,10 @@ public class TicTacToe {
 		isTie = false;
 	}
 
+	public static String welcome() {
+                return "Velkomin i myllu!\n";
+        }
+
 	public static String drawBoard() {
 		return board;
 	}

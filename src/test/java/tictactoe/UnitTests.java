@@ -5,8 +5,8 @@ import org.junit.Test;
 
 public class UnitTests {
 	public static void main(String args[]) {
-      org.junit.runner.JUnitCore.main("tictactoe.UnitTests");
-    }
+      		org.junit.runner.JUnitCore.main("tictactoe.UnitTests");
+    	}
 	@Test
 	public void testEmptyBoard() {
 		assertEquals("||===========||\n||   |   |   ||\n||===========||\n||   |   |   ||\n||===========||\n||   |   |   ||\n||===========||", new TicTacToe().drawBoard());
@@ -14,12 +14,7 @@ public class UnitTests {
 
 	@Test
 	public void testWelcomeMessage() {
-		assertEquals("Velkomin i myllu!\n", TTTInterface.welcome());
-	}
-
-	@Test
-	public void testInstructions() {
-		assertEquals("Leikmadur slaer inn tolu a bilinu 1-9 til ad velja reit til ad setja taknid sitt i.\n||===========||\n|| 1 | 2 | 3 ||\n||===========||\n|| 4 | 5 | 6 ||\n||===========||\n|| 7 | 8 | 9 ||\n||===========||\n", TTTInterface.instructions());
+		assertEquals("Velkomin i myllu!\n", TicTacToe.welcome());
 	}
 
 	@Test
