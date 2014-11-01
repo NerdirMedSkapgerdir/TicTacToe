@@ -1,6 +1,6 @@
 package tictactoe;
 
-public class TicTacToe {	
+public class TicTacToe {	 
 	static char[] states = new char[9];
 	static boolean player;
 	static String board;
