@@ -39,22 +39,22 @@
         </div>
 
         <!-- Load jquery -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
         <!-- Use ajax to submit form, retrive joke and display on page -->
-        <script>
+        <script type="text/javascript">
         $(document).ready(function() {
             
             event.preventDefault();
             $.ajax({
                 type: 'POST',
                 url: "/index",
-                data: null,
+                data: null
                 }).done(function(welcome) {
                     $('#welcome-message').html(welcome).attr('class', 'alert alert-success');
 
                 }).fail(function() {
-                    $('#welcome-message').html('Ekki tókst að ná í kveðju.');
+                    $('#welcome-message').html('Ekki tokst ad na í kvedju...');
                 });
 
             $('#start-button').click(function(e) {
@@ -62,14 +62,14 @@
             $.ajax({
                 type: $('#start').attr('method'),
                 url: $('#start').attr('action'),
-                data: null,
+                data: null
                 }).done(function(board) {
                     $('#tictactoe-board').html(board).attr('class', 'alert alert-success');
                     $('#index-page').hide();
                     $('#play-page').show();
 
                 }).fail(function() {
-                    $('#results').html('Error, no joke found...').attr('class', 'alert alert-danger');
+                    $('#results').html('Villa, ekki tokst ad byrja leikinn...').attr('class', 'alert alert-danger');
                 });
             });
 
@@ -79,7 +79,7 @@
             $.ajax({
                 type: $('#play').attr('method'),
                 url: $('#play').attr('action'),
-                data: 'id=' + number,
+                data: 'id=' + number
                 }).done(function(board) {
                     $('#tictactoe-board').html(board);
                     $('#move').val('');
@@ -100,7 +100,7 @@
             $.ajax({
                 type: 'POST',
                 url: '/reset',
-                data: null,
+                data: null
                 }).done(function(board) {
                     $('#tictactoe-board').html(board);
                     $('#replay-button').hide();
