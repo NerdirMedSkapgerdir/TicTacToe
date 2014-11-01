@@ -10,10 +10,9 @@ public class TTTWeb implements SparkApplication {
 		staticFileLocation("/public");
 		SparkApplication tttweb = new TTTWeb();
         	String port = System.getenv("PORT");
-            setPort(4569);
-        	/*if (port != null) {
+        	if (port != null) {
         		setPort(Integer.valueOf(port));
-        	}*/
+        	}
         	tttweb.init();
 	}
 
