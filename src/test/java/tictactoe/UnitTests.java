@@ -3,9 +3,9 @@ package tictactoe;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
-public class TestInterface {
+public class UnitTests {
 	public static void main(String args[]) {
-      org.junit.runner.JUnitCore.main("tictactoe.TestInterface");
+      org.junit.runner.JUnitCore.main("tictactoe.UnitTests");
     }
 	@Test
 	public void testEmptyBoard() {
