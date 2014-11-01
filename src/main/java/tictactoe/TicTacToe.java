@@ -19,6 +19,15 @@ public class TicTacToe {
 		return board;
 	}
 
+	public void clearBoard() {
+				for(int i = 0; i < 9; i++) {
+			states[i] = 'E';
+		}
+		player = true;
+		board = "||===========||\n||   |   |   ||\n||===========||\n||   |   |   ||\n||===========||\n||   |   |   ||\n||===========||";
+		isTie = false;
+	}
+
 	public static boolean updateBoard(String input) {
 		int inp;
 		if (input.equals("e")) {
@@ -135,8 +144,8 @@ public class TicTacToe {
 	}
 
 	public static String getPlayer() {
-		if(player) return "Leikmadur 1";
-		else return "Leikmadur 2";
+		if(player) return "Leikmaður 1";
+		else return "Leikmaður 2";
 	}
 
 	public static String printResults() {
@@ -145,6 +154,6 @@ public class TicTacToe {
 		}
 		if(player) player = false;
 		else player = true;
-		return board + "\n\n" + getPlayer() + " hefur unnid!";
+		return board + "\n\n" + getPlayer() + " hefur unnið!";
 	}
 }

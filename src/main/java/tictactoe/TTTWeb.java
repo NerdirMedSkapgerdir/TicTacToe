@@ -39,23 +39,30 @@ public class TTTWeb implements SparkApplication {
         	post(new Route("/start"){
             		@Override
             		public Object handle(Request request, Response response){
-                		String board = mylla.drawBoard() + "<br/><br/>" +  mylla.getPlayer() + " a leik";
+                		String board = mylla.drawBoard() + "<br/><br/>" +  mylla.getPlayer() + " á leik";
                 		return board;
             		}
         	});
 
 		post(new Route("/play"){
-                @Override
-                public Object handle(Request request, Response response){
-				System.out.println("0");
-                    String input = request.queryParams("id");
-                    mylla.updateBoard(input);
-    				if (mylla.isFinished()) {
-                        return mylla.printResults();
-                    }
-                    
-                    return mylla.drawBoard() + "<br/><br/>" + mylla.getPlayer() + " a leik";
+            @Override
+            public Object handle(Request request, Response response){
+                String input = request.queryParams("id");
+                mylla.updateBoard(input);
+				if (mylla.isFinished()) {
+                    return mylla.printResults();
                 }
-            });
+                
+                return mylla.drawBoard() + "<br/><br/>" + mylla.getPlayer() + " á leik";
+            }
+        });
+
+        post(new Route("/reset"){
+            @Override
+            public Object handle(Request request, Response response){
+                mylla.clearBoard();
+                return mylla.drawBoard() + "<br/><br/>" + mylla.getPlayer() + " á leik";
+            }
+        });
     }
 }

@@ -3,14 +3,14 @@
     <head>
         <title>Mylla</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<style>
-	    body {background-color:rgb(15,15,15);
+    <style>
+        body {background-color:rgb(15,15,15);
                   color:rgb(200,200,200);
                   font-family:"Courier New";
                   font-size:30px;
-		  text-align:center;}
-	    h1   {color:rgb(200,150,150);}
-	</style>
+          text-align:center;}
+        h1   {color:rgb(200,150,150);}
+    </style>
     </head>
     <body>
         <div class="container" id="index-page">
@@ -25,10 +25,10 @@
         <div class="container" id="play-page"  hidden>
             <h1>#Mylla#</h1>
             <form method="post" action="/play" class="form-inline" role="form" id="play">
-                <div class="form group" id="input-move">
+                
                     <input type="text" name="number" id="move" placeholder="1-9">
                     <button type="submit" id="play-button">Leika</button>
-                </div>
+                
                 <button type="submit" id="replay-button" hidden>Spila aftur</button>
                 
             </form>
@@ -84,13 +84,32 @@
                     $('#move').val('');
                     $('#move').focus();
                     if((board.indexOf("hefur") > -1 && board.indexOf("unni") > -1) || board.indexOf("Jafntefli") > -1) {
-                        $('#input-move').hide();
+                        $("#play-button").hide();
+                        $("#move").hide();
                         $('#replay-button').show();
                     }
                 }).fail(function() {
-                    $('#results').html('Error, no joke found...').attr('class', 'alert alert-danger');
+                    $('#tictactoe-board').html('Villa kom upp. Vinsamlega reynið aftur síðar.')
                 });
             });
+
+            $('#replay-button').click(function(e) {
+            event.preventDefault();
+            var number = $('#move').val();
+            $.ajax({
+                type: 'POST',
+                url: '/reset',
+                data: null,
+                }).done(function(board) {
+                    $('#tictactoe-board').html(board);
+                    $('#replay-button').hide();
+                    $("#play-button").show();
+                    $("#move").show();
+                }).fail(function() {
+                    $('#tictactoe-board').html('Villa kom upp. Vinsamlega reynið aftur síðar.');
+                });
+            });
+
         });
         </script>
     </body>
