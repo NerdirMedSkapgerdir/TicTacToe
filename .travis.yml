@@ -5,11 +5,11 @@ jdk:
 env:
 - TERM=dumb
 script:
-- "./bin/clean"
-- "./bin/check"
-- "./bin/build"
+- "./gradlew clean"
+- "./gradlew check"
+- "./gradlew build"
 after_success:
-- "./bin/unit_test"
+- "./gradlew test"
 - "./gradlew jacocoTestReport coveralls"
 after_success:
 deploy:
