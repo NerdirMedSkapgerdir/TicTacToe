@@ -6,6 +6,7 @@
 
 Hér má sjá klasaritið sem hópurinn gerði í upphafi verkefnis:
 
+![alt tag](https://raw.github.com/NerdirMedSkapgerdir/TicTacToe/master/documents/klasarit_upprunalegt.jpg)
 
 
 Hér má svo sjá endanlegt klasarit:
