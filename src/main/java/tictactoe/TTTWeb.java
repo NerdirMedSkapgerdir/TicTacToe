@@ -20,7 +20,7 @@ public class TTTWeb implements SparkApplication {
         	final TTTInterface vidmot = new TTTInterface();
 		final TicTacToe mylla = new TicTacToe();
 
-		post(new Route("/index"){
+		post(new Route("/index") {
 			@Override
 			public Object handle(Request request, Response response){
 				String welcome = vidmot.welcome();
@@ -28,7 +28,7 @@ public class TTTWeb implements SparkApplication {
 			}
 		});
 
-		post(new Route("/instructions"){
+		post(new Route("/instructions") {
                         @Override
                         public Object handle(Request request, Response response){
                                 String instr = vidmot.instructions();
@@ -39,7 +39,7 @@ public class TTTWeb implements SparkApplication {
         	post(new Route("/start"){
             		@Override
             		public Object handle(Request request, Response response){
-                		String board = mylla.drawBoard() + "<br/><br/>" +  mylla.getPlayer() + " á leik";
+                		String board = mylla.drawBoard() + "<br/><br/>" +  mylla.getPlayer() + " a leik";
                 		return board;
             		}
         	});
@@ -48,12 +48,15 @@ public class TTTWeb implements SparkApplication {
             @Override
             public Object handle(Request request, Response response){
                 String input = request.queryParams("id");
-                mylla.updateBoard(input);
+                if (!mylla.updateBoard(input)) {
+                    return mylla.drawBoard() + "<br/> Ogilt inntak eda reitur nu thegar fylltur, reyndu aftur.<br/>" + mylla.getPlayer() + " a leik";
+                }
+
 				if (mylla.isFinished()) {
                     return mylla.printResults();
                 }
                 
-                return mylla.drawBoard() + "<br/><br/>" + mylla.getPlayer() + " á leik";
+                return mylla.drawBoard() + "<br/><br/>" + mylla.getPlayer() + " a leik";
             }
         });
 
@@ -61,7 +64,7 @@ public class TTTWeb implements SparkApplication {
             @Override
             public Object handle(Request request, Response response){
                 mylla.clearBoard();
-                return mylla.drawBoard() + "<br/><br/>" + mylla.getPlayer() + " á leik";
+                return mylla.drawBoard() + "<br/><br/>" + mylla.getPlayer() + " a leik";
             }
         });
     }
