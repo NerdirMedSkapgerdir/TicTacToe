@@ -12,4 +12,4 @@ Click here for the [development manual.](manuals/dev_manual.md)
 
 [![Build Status](https://travis-ci.org/NerdirMedSkapgerdir/TicTacToe.svg?branch=master)](https://travis-ci.org/NerdirMedSkapgerdir/TicTacToe)
 
-[![Coverage Status](https://coveralls.io/repos/NerdirMedSkapgerdir/TicTacToe/badge.png)](https://coveralls.io/r/NerdirMedSkapgerdir/TicTacToe)
+[![Coverage Status](https://coveralls.io/repos/NerdirMedSkapgerdir/TicTacToe/badge.png?branch=master)](https://coveralls.io/r/NerdirMedSkapgerdir/TicTacToe?branch=master)
