@@ -1,31 +1,29 @@
 language: java
+
 jdk:
 - openjdk7
 - oraclejdk7
 
 env:
-- TERM=dumb
+  - TERM=dumb
 
 install:
-#- "wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh"
-#- "heroku labs:enable pipelines"
-#- "heroku plugins:install git://github.com/heroku/heroku-pipeline.git"
 - "gem install heroku"
-- "heroku labs:enable pipelines"
+#- "heroku labs:enable pipelines"
 - "heroku plugins:install git://github.com/heroku/heroku-pipeline.git"
-
 
 before_script:
 - "./bin/travis/build"
 
-script: 
-- "./bin/travis/unit_test" 
+script:
+- "./bin/travis/unit_test"
 
 deploy:
   provider: heroku
   api_key:
     secure: GbOepOMObba4FeSPJZQtXWTHKbqp0mzNEijXrI6K4V6XfFeJKcxG0CP0wFv1BgemKN8sCTBQhMif6s8+kvuRPgboOK9vymF1cPZSCIS1L4AZD6aOzgOPzCNPzwlKsprgkoQvRhXPL7kFiORdR7etZTCtrzW3s3/4YTd+nkyl57A=
   app: nerdir-staging
+  strategy: git
   on:
     repo: NerdirMedSkapgerdir/TicTacToe
 
