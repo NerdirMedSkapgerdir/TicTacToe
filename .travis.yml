@@ -9,7 +9,10 @@ env:
 
 notifications:
   email:
-    - nerdirmedskapgerdir@gmail.com
+    recipients:
+      - nerdirmedskapgerdir@gmail.com
+    on_success: never
+    on_failure: always
 
 install:
 - ./gradlew assemble
