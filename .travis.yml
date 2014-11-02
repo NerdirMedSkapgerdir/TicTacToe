@@ -9,9 +9,9 @@ env:
 
 notifications:
   email:
-    recepients:
+    recipients:
       - nerdirmedskapgerdir@gmail.com
-    on_success: change
+    on_success: never
     on_failure: always
 
 install:

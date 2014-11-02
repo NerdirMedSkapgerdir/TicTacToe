@@ -1,4 +1,4 @@
 #!/bin/bash
 
-./gradlew build jacocoTestReport
+./gradlew build
 
