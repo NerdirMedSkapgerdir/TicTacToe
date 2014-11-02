@@ -5,12 +5,14 @@ jdk:
 
 env:
   - TERM=dumb
-  - Email = email
+
 
 install:
-- "gem install heroku"
+- "wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh"
 - "heroku labs:enable pipelines"
+- "email"
 - "heroku plugins:install git://github.com/heroku/heroku-pipeline.git"
+
 
 before_script:
 - "./bin/travis/build"
