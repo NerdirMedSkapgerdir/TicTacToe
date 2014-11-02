@@ -9,7 +9,7 @@ public class UnitTests {
     	}
 	@Test
 	public void testEmptyBoard() {
-		assertEquals("||===========||||   |   |   ||\n||===========||\n||   |   |   ||\n||===========||\n||   |   |   ||\n||===========||", new TicTacToe().drawBoard());
+		assertEquals("||===========||\n||   |   |   ||\n||===========||\n||   |   |   ||\n||===========||\n||   |   |   ||\n||===========||", new TicTacToe().drawBoard());
 	}
 
 	@Test
