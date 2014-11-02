@@ -6,6 +6,9 @@ jdk:
 env:
 - TERM=dumb
 
+install:
+
+
 before_script:
 - "./bin/travis/build"
 
@@ -22,5 +25,5 @@ deploy:
 
 after_deploy:
 - "./bin/travis/test_and_promote"
-
+- "heroku pipeline:promote --app nerdir-staging"
 
