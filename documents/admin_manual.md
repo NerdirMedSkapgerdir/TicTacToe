@@ -6,7 +6,7 @@ Allt sem þarf til að setja verkefnið upp og fá í keyrslu á hreinni vél.
 
 ### Uppsetning:
 
-Niðurhalið forritinu [TicTacToe](https://github.com/NerdirMedSkapgerdir/TicTacToe/tree/master/TicTacToe_Release)
+Niðurhalið forritinu [TicTacToe](https://github.com/NerdirMedSkapgerdir/TicTacToe/releases)
 
 #### Windows
 
@@ -22,4 +22,4 @@ Opnið vafra og sláið inn IP tölu vélarinnar sem þú ert að vinna í, tví
 
 ## Keyrsla á vefnum
 
-Spilaðu leikinn [TicTacToe](nerdir.herokuapp.com) á netinu. Slóðin er [nerdir.herokuapp.com](nerdir.herokuapp.com)
+Spilaðu leikinn [TicTacToe](https://nerdir.herokuapp.com) á netinu. Slóðin er [nerdir.herokuapp.com](https://nerdir.herokuapp.com)
