@@ -21,9 +21,6 @@ deploy:
     repo: NerdirMedSkapgerdir/TicTacToe
 
 after_deploy:
-- "./bin/travis/end_to_end_test"
-
-after_success:
-- "heroku pipeline:promote --app nerdir-staging"
+- "./bin/travis/test_and_promote"
 
 
