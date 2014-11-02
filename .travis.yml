@@ -7,7 +7,15 @@ jdk:
 env:
   - TERM=dumb
 
+notification:
+  email:
+    recepients:
+      - nerdirmedskapgerdir@gmail.com
+    on_success: change
+    on_failure: always
+
 install:
+- ./gradlew assemble
 - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 - heroku labs:enable pipelines
 - heroku plugins:install git://github.com/heroku/heroku-pipeline.git
