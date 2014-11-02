@@ -149,6 +149,13 @@ public class NerdirWebTest {
     driver.findElement(By.id("replay-button")).click();
   }
 
+  @Test
+  public void killEverything() throws Exception {
+    driver.get(baseUrl);
+    driver.navigate().refresh();
+    driver.findElement(By.id("i_hate_everything")).click();
+  }
+
   @After
   public void tearDown() throws Exception {
     driver.quit();
