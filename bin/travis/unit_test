@@ -2,4 +2,5 @@
 
 set -ev
 ./gradlew test
+./gradlew check
 ./gradlew jacocoTestReport coveralls

@@ -7,7 +7,7 @@ jdk:
 env:
   - TERM=dumb
 
-notification:
+notifications:
   email:
     recepients:
       - nerdirmedskapgerdir@gmail.com
