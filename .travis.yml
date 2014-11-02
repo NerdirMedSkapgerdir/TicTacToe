@@ -4,14 +4,9 @@ jdk:
 - openjdk7
 - oraclejdk7
 env:
-  matrix:
   - TERM=dumb
-  global:
-    secure: j7V7/RvXHLu+O5RvQVclggUelopNpmftqtsxYOY3sQTez2fxhrxqB8jZ2CVw089elSz8NH37JBoqQYm3TN/LPN2aozOgiriYX1ubCpTMj74ideb0om5ZkFue6BBFrtL1E5UZjRttO7QT+YZMhfQdJvlxZYsFtTiQl5Ypks6rBUc=
 install:
 - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
-- heroku auth:login
-- email
 - heroku labs:enable pipelines
 - heroku plugins:install git://github.com/heroku/heroku-pipeline.git
 before_script:
