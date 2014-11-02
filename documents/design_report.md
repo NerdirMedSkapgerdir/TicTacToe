@@ -19,3 +19,5 @@ Að lokum hentum við svo TTTInterface klasanum eftir að við vefvæddum verkef
 ## Lokaorð
 
 Klasaritið var mjög hjálplegt við forritunina til að halda góðri yfirsýn yfir verkefnið þegar maður var að rýna djúpt í kóðann. Að lokum var nærvera tilvonandi hunds Bergskeljarinnar mikilvæg fyrir góð hugarástönd teymismeðlima. Hér má sjá mynd af honum:
+
+![alt tag](https://raw.github.com/NerdirMedSkapgerdir/TicTacToe/master/documents/berslatordog.jpg)

@@ -9,3 +9,7 @@ Click here for the [administration manual](documents/admin_manual.md).
 Click here for the [development manual](documents/dev_manual.md).
 
 Click here for the [design report](documents/design_report.md).
+
+
+
+[Release test.](https://github.com/NerdirMedSkapgerdir/TicTacToe/releases/download/test/TicTacToe_Release.zip)
