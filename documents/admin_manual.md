@@ -18,7 +18,7 @@ Niðurhalið nýjustu útgáfu af forritinu [TicTacToe](https://github.com/Nerdi
 
 ### Keyrsla:
 
-Opnið vafra og sláið inn IP tölu vélarinnar sem þú ert að vinna í, tvípunkt og portið 4567. Dæmi: `46.149.27.250:4567`
+Opnið vafra og sláið inn: `http://localhost:4567`
 
 ## Keyrsla á vefnum
 
