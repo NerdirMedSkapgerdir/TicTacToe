@@ -12,4 +12,4 @@ Click here for the [design report](documents/design_report.md).
 
 
 
-[Release test.](https://github.com/NerdirMedSkapgerdir/TicTacToe/releases/download/test/TicTacToe.-.ATLIHERNAERMAPPAN.zip)
+[Release test.](https://github.com/NerdirMedSkapgerdir/TicTacToe/releases/download/test/TicTacToe_Release.zip)
