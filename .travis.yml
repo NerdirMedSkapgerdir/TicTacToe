@@ -9,8 +9,7 @@ env:
 
 notifications:
   email:
-    recepients:
-      - nerdirmedskapgerdir@gmail.com
+    - nerdirmedskapgerdir@gmail.com
     on_success: change
     on_failure: always
 
