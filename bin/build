@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -ev
+./gradlew clean
+./gradlew check
+./gradlew build
