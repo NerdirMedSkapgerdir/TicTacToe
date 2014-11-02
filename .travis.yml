@@ -9,7 +9,7 @@ env:
 
 install:
 - "gem install heroku"
-#- "heroku labs:enable pipelines"
+- "heroku labs:enable pipelines"
 - "heroku plugins:install git://github.com/heroku/heroku-pipeline.git"
 
 before_script:
