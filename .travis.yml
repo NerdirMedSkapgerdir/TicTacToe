@@ -12,14 +12,14 @@ before_script:
 script: 
 - "./bin/travis/unit_test" 
 
-deploy:
-  provider: heroku
-  api_key:
-    secure: GbOepOMObba4FeSPJZQtXWTHKbqp0mzNEijXrI6K4V6XfFeJKcxG0CP0wFv1BgemKN8sCTBQhMif6s8+kvuRPgboOK9vymF1cPZSCIS1L4AZD6aOzgOPzCNPzwlKsprgkoQvRhXPL7kFiORdR7etZTCtrzW3s3/4YTd+nkyl57A=
-  app: nerdir
-  on:
-    repo: NerdirMedSkapgerdir/TicTacToe
-after_deploy:
-- "./bin/travis/end_to_end_test"
+#deploy:
+#  provider: heroku
+#  api_key:
+#    secure: GbOepOMObba4FeSPJZQtXWTHKbqp0mzNEijXrI6K4V6XfFeJKcxG0CP0wFv1BgemKN8sCTBQhMif6s8+kvuRPgboOK9vymF1cPZSCIS1L4AZD6aOzgOPzCNPzwlKsprgkoQvRhXPL7kFiORdR7etZTCtrzW3s3/4YTd+nkyl57A=
+#  app: nerdir
+#  on:
+#    repo: NerdirMedSkapgerdir/TicTacToe
+#after_deploy:
+#- "./bin/travis/end_to_end_test"
 
 
