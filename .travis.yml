@@ -20,6 +20,6 @@ deploy:
   on:
     repo: NerdirMedSkapgerdir/TicTacToe
 after_deploy:
-- "./gradlew seleniumXvfb"
+- "./bin/travis/end_to_end_test"
 
 
