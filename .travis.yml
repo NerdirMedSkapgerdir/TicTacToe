@@ -7,10 +7,10 @@ env:
 - TERM=dumb
 
 before_script:
-- "./bin/build"
+- "./bin/travis/build"
 
 script: 
-- "./bin/unit_test" 
+- "./bin/travis/unit_test" 
 
 deploy:
   provider: heroku
