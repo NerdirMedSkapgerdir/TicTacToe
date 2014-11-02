@@ -6,7 +6,7 @@ Allt sem þarf til að setja verkefnið upp og fá í keyrslu á hreinni vél.
 
 ### Uppsetning:
 
-Niðurhalið forritinu [TicTacToe](https://github.com/NerdirMedSkapgerdir/TicTacToe/releases)
+Niðurhalið nýjustu útgáfu af forritinu [TicTacToe](https://github.com/NerdirMedSkapgerdir/TicTacToe/releases)
 
 #### Windows
 
