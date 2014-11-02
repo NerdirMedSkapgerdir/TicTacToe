@@ -3,16 +3,21 @@ language: java
 jdk:
 - openjdk7
 - oraclejdk7
+
 env:
   - TERM=dumb
+
 install:
 - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 - heroku labs:enable pipelines
 - heroku plugins:install git://github.com/heroku/heroku-pipeline.git
+
 before_script:
-- "./bin/travis/build"
+- ./bin/travis/build
+
 script:
-- "./bin/travis/unit_test"
+- ./bin/travis/unit_test
+
 deploy:
   provider: heroku
   api_key:
@@ -21,5 +26,6 @@ deploy:
   strategy: git
   on:
     repo: NerdirMedSkapgerdir/TicTacToe
+
 after_deploy:
-- "./bin/travis/test_and_promote"
+- ./bin/travis/test_and_promote
