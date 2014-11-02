@@ -24,7 +24,7 @@ public class TicTacToe {
 	}
 
 	public void clearBoard() {
-				for (int i = 0; i < 9; i++) {
+		for (int i = 0; i < 9; i++) {
 			states[i] = 'E';
 		}
 		player = true;
@@ -34,11 +34,6 @@ public class TicTacToe {
 
 	public static boolean updateBoard(String input) {
 		int inp;
-		if (input.equals("e")) {
-			System.out.println("Bless.");
-			System.exit(0);
-		}
-
 		try {  
 		  inp = Integer.parseInt(input);
 		}  catch (NumberFormatException nfe) {  
