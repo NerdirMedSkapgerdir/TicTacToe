@@ -18,7 +18,7 @@ public class NerdirWebTest {
   @Before
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
-    baseUrl = "http://nerdir.herokuapp.com/";
+    baseUrl = "http://nerdir-staging.herokuapp.com/";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
@@ -140,6 +140,13 @@ public class NerdirWebTest {
     } catch (Error e) {
       verificationErrors.append(e.toString());
     }
+  }
+
+  @Test(expected = Exception.class)
+  public void testException() throws Exception {
+    driver.get(baseUrl);
+    driver.navigate().refresh();
+    driver.findElement(By.id("replay-button")).click();
   }
 
   @After
