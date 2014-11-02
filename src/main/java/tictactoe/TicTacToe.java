@@ -7,7 +7,7 @@ public class TicTacToe {
 	static boolean isTie;
 
 	public TicTacToe() {
-		for(int i = 0; i < 9; i++) {
+		for (int i = 0; i < 9; i++) {
 			states[i] = 'E';
 		}
 		player = true;
@@ -24,7 +24,7 @@ public class TicTacToe {
 	}
 
 	public void clearBoard() {
-				for(int i = 0; i < 9; i++) {
+				for (int i = 0; i < 9; i++) {
 			states[i] = 'E';
 		}
 		player = true;
@@ -41,20 +41,18 @@ public class TicTacToe {
 
 		try {  
 		  inp = Integer.parseInt(input);
-		}  
-		catch(NumberFormatException nfe) {  
+		}  catch (NumberFormatException nfe) {  
 		  System.out.println(nfe.getMessage());
 		  return false;  
 		}
-		if(inp < 1 || inp > 9) return false;
-		if(states[inp - 1] != 'E') return false;
+		if (inp < 1 || inp > 9) return false;
+		if (states[inp - 1] != 'E') return false;
 		char cPlayer;
-		if(player == true) {
+		if (player == true) {
 			cPlayer = 'X';
 			states[inp - 1] = cPlayer;
 			player = false;
-		}
-		else {
+		} else {
 			cPlayer = 'O';
 			states[inp - 1] = cPlayer;
 			player = true;
@@ -94,53 +92,53 @@ public class TicTacToe {
 
 	public static boolean isFinished() {
 		char curr = 'X';
-		for(int i = 0; i < 2; i++) {
-			if(states[0] == curr) {
-				if(states[1] == curr) {
-					if(states[2] == curr)
+		for (int i = 0; i < 2; i++) {
+			if (states[0] == curr) {
+				if (states[1] == curr) {
+					if (states[2] == curr)
 						return true;
 				}
-				if(states[4] == curr) {
-					if(states[8] == curr)
+				if (states[4] == curr) {
+					if (states[8] == curr)
 						return true;
 				}
-				if(states[3] == curr) {
-					if(states[6] == curr)
-						return true;
-				}
-			}
-			if(states[1] == curr) {
-				if(states[4] == curr) {
-					if(states[7] == curr)
+				if (states[3] == curr) {
+					if (states[6] == curr)
 						return true;
 				}
 			}
-			if(states[2] == curr) {
-				if(states[5] == curr) {
-					if(states[8] == curr)
-						return true;
-				}
-				if(states[4] == curr) {
-					if(states[6] == curr)
+			if (states[1] == curr) {
+				if (states[4] == curr) {
+					if (states[7] == curr)
 						return true;
 				}
 			}
-			if(states[3] == curr) {
-				if(states[4] == curr) {
-					if(states[5] == curr)
+			if (states[2] == curr) {
+				if (states[5] == curr) {
+					if (states[8] == curr)
+						return true;
+				}
+				if (states[4] == curr) {
+					if (states[6] == curr)
 						return true;
 				}
 			}
-			if(states[6] == curr) {
-				if(states[7] == curr) {
-					if(states[8] == curr)
+			if (states[3] == curr) {
+				if (states[4] == curr) {
+					if (states[5] == curr)
+						return true;
+				}
+			}
+			if (states[6] == curr) {
+				if (states[7] == curr) {
+					if (states[8] == curr)
 						return true;
 				}
 			}
 			curr = 'O';
 		}
-		for(char state : states) {
-			if(state == 'E')
+		for (char state : states) {
+			if (state == 'E')
 				return false;
 		}
 		isTie = true;
@@ -148,15 +146,15 @@ public class TicTacToe {
 	}
 
 	public static String getPlayer() {
-		if(player) return "Leikmadur 1";
+		if (player) return "Leikmadur 1";
 		else return "Leikmadur 2";
 	}
 
 	public static String printResults() {
-		if(isTie) {
+		if (isTie) {
 			return board + "\n\nJafntefli!";
 		}
-		if(player) player = false;
+		if (player) player = false;
 		else player = true;
 		return board + "\n\n" + getPlayer() + " hefur unnid!";
 	}
