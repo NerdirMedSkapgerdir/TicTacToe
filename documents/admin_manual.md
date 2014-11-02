@@ -18,7 +18,7 @@ Niðurhalið nýjustu útgáfu af forritinu [TicTacToe](https://github.com/Nerdi
 
 ### Keyrsla:
 
-Opnið vafra og sláið inn: `http://localhost:4567`
+Opnið vafra og sláið inn: `localhost:4567`
 
 ## Keyrsla á vefnum
 
