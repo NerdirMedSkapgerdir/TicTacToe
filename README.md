@@ -2,10 +2,10 @@
 
 TicTacToe project for Software Development.
 
-[Click here to play the game.](http://nerdir.herokuapp.com/).
+[Click here to play the game](http://nerdir.herokuapp.com/).
 
-Click here for the [administration manual.](documents/admin_manual.md).
+Click here for the [administration manual](documents/admin_manual.md).
 
-Click here for the [development manual.](documents/dev_manual.md).
+Click here for the [development manual](documents/dev_manual.md).
 
-Click here for the [design report.](documents/design_report.md).
+Click here for the [design report](documents/design_report.md).
