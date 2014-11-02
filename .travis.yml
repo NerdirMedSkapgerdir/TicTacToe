@@ -5,6 +5,7 @@ jdk:
 
 env:
   - TERM=dumb
+  - Email = email
 
 install:
 - "gem install heroku"
