@@ -6,11 +6,13 @@ Allt sem þarf til að geta þróað verkefnið á hreinni vél.
 
 GitHub gagnasafnsgeymsla verkefnisins er opin öllum svo ekki þarf að veita aðgang að henni.
 
-#### Leiðbeiningar til að klóna:
+#### Leiðbeiningar til að gaffla:
+
+Byrjið á því að gaffla gagnasafnsgeymsluna [TicTacToe](https://github.com/NerdirMedSkapgerdir/TicTacToe).
 
 Keyrið eftirfarandi skipun í skel (í möppunni sem þú vilt klóna verkefnið):
 
-`git clone https://github.com/NerdirMedSkapgerdir/TicTacToe.git`
+`git clone *slóðin af ný-göffluðu gagnasafnsgeymslunni þinni*`
 
 Þá ætti verkefnið að vera komið á sinn stað í tölvunni ykkar.
 
@@ -40,9 +42,7 @@ Ekki þarf að bæta við fleiri hlutum, því að Gradle sér um að installa f
 
 `./bin/deploy`
 
-Þegar skráin, sem verður til við þetta (ekki .bat skráin í möppunni `~/tmp/TicTacToe/bin/` heldur hin), er keyrð með skipunni `./tmp/TicTacToe/bin/TicTacToe` í Linux eða með því að opna `TicTacToe.bat` skránna í Windows, getiði skoðað forritið í vafra með því að slá inn addressu vélarinnar, tvípunkt og port númerið sem ætti að vera 4567. T.d:
-
-`46.149.27.250:4567`
+Þegar skráin, sem verður til við þetta (ekki .bat skráin í möppunni `~/tmp/TicTacToe/bin/` heldur hin), er keyrð með skipunni `./tmp/TicTacToe/bin/TicTacToe` í Linux eða með því að opna `TicTacToe.bat` skránna í Windows, getiði skoðað forritið í vafra með því að slá inn: `localhost:4567`
 
 #### Leiðbeiningar til að fremja og ýta á GitHub:
 
