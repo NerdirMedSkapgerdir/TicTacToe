@@ -10,8 +10,6 @@ env:
 notifications:
   email:
     - nerdirmedskapgerdir@gmail.com
-    on_success: change
-    on_failure: always
 
 install:
 - ./gradlew assemble
