@@ -94,46 +94,49 @@ public class TicTacToe {
 		char curr = 'X';
 		for (int i = 0; i < 2; i++) {
 			if (states[0] == curr) {
-				if (states[1] == curr) {
-					if (states[2] == curr)
-						return true;
+				
+				if (states[1] == curr &&
+					states[2] == curr) {
+					return true;
 				}
-				if (states[4] == curr) {
-					if (states[8] == curr)
-						return true;
+
+				if (states[4] == curr &&
+					states[8] == curr) {
+					return true;
 				}
-				if (states[3] == curr) {
-					if (states[6] == curr)
-						return true;
-				}
-			}
-			if (states[1] == curr) {
-				if (states[4] == curr) {
-					if (states[7] == curr)
+
+				if (states[3] == curr &&
+					states[6] == curr) {
 						return true;
 				}
 			}
+			if (states[1] == curr &&
+				states[4] == curr &&
+				states[7] == curr) {
+				return true;
+			}
+
 			if (states[2] == curr) {
-				if (states[5] == curr) {
-					if (states[8] == curr)
-						return true;
+				if (states[5] == curr &&
+					states[8] == curr) {
+					return true;
 				}
-				if (states[4] == curr) {
-					if (states[6] == curr)
-						return true;
-				}
-			}
-			if (states[3] == curr) {
-				if (states[4] == curr) {
-					if (states[5] == curr)
-						return true;
+				if (states[4] == curr &&
+					states[6] == curr) {
+					return true;
 				}
 			}
-			if (states[6] == curr) {
-				if (states[7] == curr) {
-					if (states[8] == curr)
-						return true;
-				}
+
+			if (states[3] == curr &&
+				states[4] == curr &&
+				states[5] == curr) {
+				return true;
+			}
+
+			if (states[6] == curr &&
+				states[7] == curr &&
+				states[8] == curr) {
+				return true;
 			}
 			curr = 'O';
 		}

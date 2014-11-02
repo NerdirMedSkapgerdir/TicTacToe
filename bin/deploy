@@ -6,3 +6,4 @@ fi
 
 ./bin/package
 cp -r build/install/TicTacToe/ ~/tmp/
+cp -r build/reports/* documents/reports
