@@ -3,10 +3,8 @@ jdk:
 - openjdk7
 - oraclejdk7
 
-env:  
-  global:
-    - secure: "AAcd722e1XF6uE/sCyHyunlWe4/Eu17LBo8vIxXnwSvP+AJVaJm2zszqXY7nhggLXOWSu19yVIPpXpl3nq4oP1j6KZei7TdCgQKMce6Ii9Wt2lfmjZ8cpi8scZtnh8lB31uC0iHuKhIGjOnvZkkEtf+HXALpADLOWuKi0zCEdO0="
-    - TERM=dumb
+env:
+- TERM=dumb
 
 
 script: 
@@ -15,16 +13,6 @@ script:
 - "./gradlew build" 
 - "./gradlew test" 
 - "./gradlew jacocoTestReport coveralls"
-
-
-addons:
-  coverity_scan:
-    project:
-      name: "NerdirMedSkapgerdir/TicTacToe"
-    notification_email: bergthor13@ru.is
-    build_command_prepend: "./gradlew clean"
-    build_command:   "./gradlew build"
-    branch_pattern: master
 
 deploy:
   provider: heroku
