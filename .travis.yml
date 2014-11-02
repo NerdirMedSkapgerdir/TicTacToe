@@ -7,9 +7,11 @@ env:
 - TERM=dumb
 
 install:
-- "wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh"
-- "heroku labs:enable pipelines"
-- "heroku plugins:install git://github.com/heroku/heroku-pipeline.git"
+#- "wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh"
+#- "heroku labs:enable pipelines"
+#- "heroku plugins:install git://github.com/heroku/heroku-pipeline.git"
+- "gem install heroku"
+
 
 before_script:
 - "./bin/travis/build"
