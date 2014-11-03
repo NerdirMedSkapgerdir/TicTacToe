@@ -6,3 +6,4 @@ fi
 
 ./bin/package
 cp -r build/install/TicTacToe/ ~/tmp/
+sudo cp -r build/reports/* /var/www/html

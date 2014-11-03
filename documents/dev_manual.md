@@ -6,11 +6,13 @@ Allt sem þarf til að geta þróað verkefnið á hreinni vél.
 
 GitHub gagnasafnsgeymsla verkefnisins er opin öllum svo ekki þarf að veita aðgang að henni.
 
-#### Leiðbeiningar til að klóna:
+#### Leiðbeiningar til að gaffla:
+
+Byrjið á því að gaffla gagnasafnsgeymsluna [TicTacToe](https://github.com/NerdirMedSkapgerdir/TicTacToe).
 
 Keyrið eftirfarandi skipun í skel (í möppunni sem þú vilt klóna verkefnið):
 
-`git clone https://github.com/NerdirMedSkapgerdir/TicTacToe.git`
+`git clone *slóðin af ný-göffluðu gagnasafnsgeymslunni þinni*`
 
 Þá ætti verkefnið að vera komið á sinn stað í tölvunni ykkar.
 
@@ -40,15 +42,13 @@ Ekki þarf að bæta við fleiri hlutum, því að Gradle sér um að installa f
 
 `./bin/deploy`
 
-Þegar skráin, sem verður til við þetta (ekki .bat skráin í möppunni `~/tmp/TicTacToe/bin/` heldur hin), er keyrð með skipunni `./tmp/TicTacToe/bin/TicTacToe` í Linux eða með því að opna `TicTacToe.bat` skránna í Windows, getiði skoðað forritið í vafra með því að slá inn addressu vélarinnar, tvípunkt og port númerið sem ætti að vera 4567. T.d:
+Þegar skráin, sem verður til við þetta (ekki .bat skráin í möppunni `~/tmp/TicTacToe/bin/` heldur hin), er keyrð með skipunni `./tmp/TicTacToe/bin/TicTacToe` í Linux eða með því að opna `TicTacToe.bat` skránna í Windows, getiði skoðað forritið í vafra með því að slá inn: `localhost:4567`
 
-`46.149.27.250:4567`
+#### Leiðbeiningar til að fremja og ýta á GitHub:
 
-#### Leiðbeiningar til að kommitta og pússja á GitHub:
+Í verkefnismöppunni, notið `git add *skráarnafn*` til að bæta þeim skrám sem þið viljið fremja breytingar á á GitHub gagnasafnsgeymsluna.
 
-Í verkefnismöppunni, notið `git add *skráarnafn*` til að bæta þeim skrám sem þið viljið kommitta á GitHub gagnasafnsgeymsluna.
-
-Notið svo `git commit -m "*Skilaboð sem segja hvað var gert*"` til að committa og svo `git push` til að pússja í verkefnið.
+Notið svo `git commit -m "*Skilaboð sem segja hvað var gert*"` til að fremja og svo `git push` til að ýta í geymsluna.
 
 Við það fer í gang ferli sem sendir verkefnið á Travis og keyrir allar srcipturnar þar. Ef það gengur, keyrast einingarprófanir á Travis, ef þær standast, sendum við verkefnið á Heroku-þjón og keyrum virknipróf (end-to-end tests) þar og ef þau standast, þá sendum við verkefnið á annan þjón á Heroku, sem hýsir þá lokaniðurstöðuna.
 
