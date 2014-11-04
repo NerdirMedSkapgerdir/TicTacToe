@@ -90,8 +90,8 @@ public class TicTacToe {
 		for (int i = 0; i < 2; i++) {
 			if (states[0] == curr) {
 				
-				if (states[1] == curr) {
-					if (states[5] == curr)
+				if (states[1] == curr &&
+			            states[2] == curr) {
 					return true;
 				}
 
