@@ -85,13 +85,13 @@ public class TicTacToe {
 		return true;
 	}
 
-	public static boolean isFinished() {
+	public static boolean IsFinished() {
 		char curr = 'X';
 		for (int i = 0; i < 2; i++) {
 			if (states[0] == curr) {
 				
-				if (states[1] == curr &&
-					states[2] == curr) {
+				if (states[1] == curr) {
+					if (states[5] == curr)
 					return true;
 				}
 
